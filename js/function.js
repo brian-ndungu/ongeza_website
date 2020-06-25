@@ -882,8 +882,7 @@ function getPremium(){
 				"Gender: "+document.forms["regForm"]["gender"].value+"\n"+
 				"Date of Birth: "+document.forms["regForm"]["dob"].value+"\n"+
 				"Age next birthday: "+age+"\n"+
-				"Income level: "+document.forms["regForm"]["income"].value+"\n"+
-				"Income level group: "+income[document.forms["regForm"]["income"].value-1]+"\n"+
+				"Income level: ("+document.forms["regForm"]["income"].value+") "+income[document.forms["regForm"]["income"].value-1]+"\n"+
 				"Premium: "+document.forms["regForm"]["premiumInput"].value+"\n"+
 				"Sum insured / Cover: "+document.forms["regForm"]["coverInput"].value,
 			Product: "OLP",
