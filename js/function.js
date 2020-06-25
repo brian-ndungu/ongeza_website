@@ -805,7 +805,7 @@ function getCover(){
 		const premiumData = {
 			ccProduct: "OLP",
 			Cover: "OLP WL",
-			RateKey1: "18",
+			RateKey1: getAge(document.forms["regForm"]["dob"].value),
 			RateKey2: document.forms["regForm"]["income"].value,
 			RateKey3: document.forms["regForm"]["gender"].value,
 			RateKey4: " ",
@@ -838,7 +838,7 @@ function getPremium(){
 		const coverData = {
 			ccProduct: "OLP",
 			Cover: "OLP WL",
-			RateKey1: "18",
+			RateKey1: getAge(document.forms["regForm"]["dob"].value),
 			RateKey2: document.forms["regForm"]["income"].value,
 			RateKey3: document.forms["regForm"]["gender"].value,
 			RateKey4: " ",
