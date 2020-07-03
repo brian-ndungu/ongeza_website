@@ -191,6 +191,7 @@ th { text-align: left; }
 table {
 	width: 100%;
 	margin-bottom: 15px;
+	box-shadow: 0 0 10px 1px rgba(0,0,0,0.10);
 }
 table > thead > tr > th,
 table > tbody > tr > th,
@@ -314,6 +315,7 @@ address { font-style: italic; }
 	width: 100%;
 	float: left;
 	height: 600px;
+	padding: 80px 0 0;
 }
 .at-locationmap iframe{
 	width: 100%;
@@ -1010,6 +1012,9 @@ li.at-rss a { background:#ff6600; }
 	padding: 8px 0 5px 40px;
 	width: 280px;
 }
+.at-headerbgwhite .at-logo{
+	width: 200px;
+}
 .at-widget .at-logo{
 	width: 200px;
 }
@@ -1490,6 +1495,7 @@ li.at-rss a { background:#ff6600; }
 .at-imgholder{
 	width: 100%;
 	float: left;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .at-textcontent {
 	overflow: hidden;
@@ -1595,7 +1601,7 @@ li.at-rss a { background:#ff6600; }
 ============================================= */
 .at-parallexhelping{
 	background: #000;
-	padding: 100px 0 100px;
+	padding: 380px 0 100px;
 }
 .at-parallexhelping:before{background-image: url('images/parallaxbg/parallaxbg-01_2.jpg');}
 .at-helpingsmallbusinesses{
@@ -3053,6 +3059,7 @@ li.at-rss a { background:#ff6600; }
 	float: left;
 	text-align: center;
 	font: 300 16px/30px 'Rubik', Arial, Helvetica, sans-serif;
+	padding: 20px 0 0;
 }
 .at-contacticon{
 	width: 100%;
@@ -3130,7 +3137,6 @@ li.at-rss a { background:#ff6600; }
 	width: 100%;
 	float: left;
 	position: relative;
-	padding: 80px 0 0;
 }
 .at-contactusvfour .at-locationmap{
 	top: 0;
@@ -3189,7 +3195,10 @@ li.at-rss a { background:#ff6600; }
 	display: inline-block;
 	vertical-align: middle;
 }
-.at-formcontacus .at-contactinfo li span a{color: #fff;}
+.at-formcontacus .at-contactinfo li span a{
+	color: #595959;
+	font-weight: bold;
+}
 .at-contactinfo li span a{color: #fff;}
 .at-whitesocialicons{
 	clear: both;
@@ -4417,7 +4426,7 @@ li.at-rss a { background:#ff6600; }
 	width: 100%;
 	height: 313px;
 }
-.at-homethree .at-ourservicesarea{
+.at-ourservicesarea {
 	height: auto;
 	padding: 100px 0;
 	background: transparent;
@@ -4671,7 +4680,7 @@ li.at-rss a { background:#ff6600; }
 .at-aboutsectionvfour{
 	padding: 0;
 	z-index: 2;
-	margin: 0 0 172px;
+	margin: 0 0 -172px;
 	position: relative;
 	background: transparent;
 }
@@ -5272,4 +5281,25 @@ li.at-rss a { background:#ff6600; }
 
   .error-message{
 	  display:none;
+  }
+
+  th {
+	background-color: #4CAF50;
+	color: white;
+  }
+  
+  #initial th {
+	background-color: #055489;
+	color: white;
+  }
+
+  .at-contactinfo a {
+	color: #595959;
+  }
+
+  .at-footer .at-logo{
+	filter: invert(80%);
+  }
+  .at-logo-sm{
+	  height:60px;
   }

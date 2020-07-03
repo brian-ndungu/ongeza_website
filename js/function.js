@@ -560,18 +560,18 @@ jQuery(document).on('ready', function() {
 	/* -------------------------------------
 			HEADER FIXED
 	-------------------------------------- */
-	// var prevScrollpos = window.pageYOffset;
-	// window.onscroll = function() {
-	// 	var currentScrollPos = window.pageYOffset;
-	// 	if (prevScrollpos > currentScrollPos) {
-	// 		document.getElementById("at-header").style.top = "0";
-	// 		document.getElementById("at-header").classList.remove("nav-up")
-	// 	} else {
-	// 		// document.getElementById("at-header").style.top = "-100px";
-	// 		document.getElementById("at-header").classList.add("nav-up")
-	// 	}
-	// 	prevScrollpos = currentScrollPos;
-	// }
+	var prevScrollpos = window.pageYOffset;
+	window.onscroll = function() {
+		var currentScrollPos = window.pageYOffset;
+		if (prevScrollpos > currentScrollPos) {
+			document.getElementById("at-header").style.top = "0";
+			document.getElementById("at-header").classList.remove("nav-up")
+		} else {
+			document.getElementById("at-header").style.top = "-100px";
+			document.getElementById("at-header").classList.add("nav-up")
+		}
+		prevScrollpos = currentScrollPos;
+	}
 });
 /* -------------------------------------
 		HEADER FIXED

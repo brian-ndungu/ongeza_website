@@ -25,12 +25,16 @@
 		font-size: 22px;
 		line-height: 26px;
 	}
+	.home-logo{
+		width: 260px;
+	}
 }
 @media (max-width:1366px){
 	.at-postsvtwo .at-post {
 		width: 33.33%;
 		float: left;
 	}
+	.home-logo{width: 240px;}
 }
 @media (max-width:1360px){}
 @media (max-width:1280px){
@@ -46,6 +50,7 @@
 	.at-headervtwo .at-contactsocial {padding: 25px 0 10px 30px;}
 	.at-headervtwo .at-navigationarea{padding: 0 20px;}
 	.at-headervtwo .at-logo {padding: 21px 0 0;}
+	.home-logo{width: 230px;}
 }
 @media (max-width:1279px){
 	.at-homeslidervthree .at-titleborder h2 {
@@ -67,6 +72,7 @@
 	.at-ptablefoot .at-btn {width: 100%;}
 	.at-aboutsectionvfourholder .at-textcontent{background: transparent;}
 	.at-homeslidervfour{min-height: 600px;}
+	.home-logo{width: 210px;}
 }
 @media (max-width:1080px){
 	.at-home .at-logo {padding: 29px 15px 0;}
@@ -131,6 +137,7 @@
 		font-size: 18px;
 		line-height: 24px;
 	}
+	.home-logo{width: 260px;}
 }
 @media (max-width:1050px){}
 @media (max-width:1024px){
@@ -235,6 +242,7 @@
 	.at-testimonial{margin: 15px 0;}
 	.at-postsvtwo .at-post {width: 50%;}
 	.at-addressfrance .at-address ul{padding: 0 0 43px;}
+	.home-logo{width:250px;}
 }
 @media (max-width:800px){
 	.at-homeslider .item figcaption {
@@ -270,6 +278,10 @@
 	.at-homeslidervsix .at-titleborder h2 {
 		font-size: 35px;
 		line-height: 35px;
+	}
+	.home-logo{
+		width: 230px;
+		padding: 8px 0 5px 25px;
 	}
 }
 @media (max-width:767px){
@@ -397,8 +409,9 @@
 	.at-contactusvfour .at-locationmap{
 		width: 100%;
 		float: left;
-		height: 500px;
+		height: 100%;
 		position: relative;
+		padding: 0 0 80px;
 	}
 	.at-contactusvfour .at-formtheme.at-formcontacus{
 		width: 100%;
