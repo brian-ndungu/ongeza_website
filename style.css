@@ -1490,7 +1490,7 @@ li.at-rss a { background:#ff6600; }
 }
 .at-aboutus .at-sectionimg{
 	width: 50%;
-	margin: 0 0 0 -100px;
+	margin: 0 0 0 -200px;
 }
 .at-imgholder{
 	width: 100%;
@@ -1507,7 +1507,7 @@ li.at-rss a { background:#ff6600; }
 }
 .at-aboutus .at-textcontent {
 	margin: 50px 0 0 50px;
-	width: calc(50% + 100px);
+	width: calc(50% + 200px);
 }
 .at-textcontent .at-description{padding: 0 0 30px;}
 .at-textcontent .at-description p{
