@@ -78,7 +78,7 @@
 										<a href="#clients">Our Clients</a>
 									</li>
 									<li class="menu-item-has-children">
-										<a href="#clients">Submit Claim</a>
+										<a href="#" data-toggle="modal" data-target="#myModal">Submit Claim</a>
 									</li>
 									<li class="menu-item-has-children">
 										<a href="#contact">Contact us</a>
@@ -876,7 +876,7 @@
 										</div>
 
 								</div>
-								<form class="at-formtheme at-formcontacus">
+								<form class="at-formtheme at-formcontacus" action="mail-it.php" method="POST">
 									<div class="at-sectiontitleborder">
 										<h2>Email Us</h2>
 									</div>
@@ -893,9 +893,9 @@
 											</li>
 										</ul>
 										<ul class="at-socialicons at-whitesocialicons">
-											<li class="at-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-											<li class="at-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-											<li class="at-instagram"><a href="javascript:void(0);"><i class="fa fa-instagram"></i></a></li>
+											<li class="at-facebook"><a href="https://www.facebook.com/ongezalife"><i class="fa fa-facebook"></i></a></li>
+											<li class="at-twitter"><a href="https://twitter.com/OngezaLife"><i class="fa fa-twitter"></i></a></li>
+											<li class="at-instagram"><a href="https://www.instagram.com/ongezalife"><i class="fa fa-instagram"></i></a></li>
 										</ul>
 									</fieldset>
 									<div class="at-sectiontitleborder">
@@ -951,6 +951,11 @@
 										<div class="at-description">
 											<p>Ongeza Life (Pty) Ltd, is an authorised Financial Services Provider, FSP No. 50004.</p>
 										</div>
+										<ul class="at-socialicons">
+											<li class="at-facebook"><a href="https://www.facebook.com/ongezalife"><i class="fa fa-facebook"></i></a></li>
+											<li class="at-twitter"><a href="https://twitter.com/OngezaLife"><i class="fa fa-twitter"></i></a></li>
+											<li class="at-instagram"><a href="https://www.instagram.com/ongezalife"><i class="fa fa-instagram"></i></a></li>
+										</ul>
 									</div>
 								</div>
 								<div class="at-fcolumn">
@@ -986,6 +991,33 @@
 		<!--************************************
 				Footer End
 		*************************************-->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h3 class="modal-title" id="myModalLabel">Claims Administration</h3>
+				</div>
+				<div class="modal-body">
+					<div class="fadeInLeft" data-wow-delay="0.3s">
+						<p >In the event of a claim, the person submitting the claim will be required to submit the
+							following documents on email to <a
+								href="mailto:claims@ongezalife.co.za">claims@ongezalife.co.za</a>. Claims can also be lodged through our
+							postal address, but we encourage the email notification for faster settlement. </p>
+						<p>1. A certified copy of the death certificate <br > 2. A copy of
+							DHA1663 – Notification/Register of Death <br> 3. A bank account letter of confirmation in
+							respect of each beneficiary <br> 4. Any other document that may be required to verify the
+							validity of the claim. </p>
+						<p>Once all the documents have been received and verified, Ongeza Life will endeavor to settle
+							the claim within 2 working days. Such a fast settlement can facilitate the financing of a funeral as well. </p>
+					</div>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			</div>
+		</div>
 	</div>
 	<!--************************************
 			Wrapper End

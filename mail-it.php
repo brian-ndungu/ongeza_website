@@ -1,7 +1,7 @@
 <?php
 
-$send_to = "daxej38533@openavz.com";
-$send_subject = "Website Quotation Form ";
+$send_to = "info@ongezalife.com";
+$send_subject = "Website Contact Us Form ";
 
 
 
@@ -26,7 +26,7 @@ $message = "This email was submitted on " . date('m-d-Y') .
 "\n\nName: " . $f_name . 
 "\n\nE-Mail: " . $f_email . 
 "\n\nMessage: \n" . $f_message . 
-"\n\nPhone Number: \n" . $f_number . 
+"\n\nPhone Number: \n" . $f_number;
 // "\n\n\nTechnical Details:\n" . $from_ip . "\n" . $from_browser;
 
 $send_subject .= " - {$f_name}";
