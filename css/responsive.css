@@ -38,7 +38,7 @@
 }
 @media (max-width:1360px){}
 @media (max-width:1280px){
-	.at-home .at-logo {width: 250px;}
+	.at-home .at-logo {width: 230px;}
 	.at-homeslidervone .item {padding: 0 0 0 320px;}
 	.at-homeone .at-navigationarea {padding: 25px 15px 0;}
 	.at-featuresarea:before {width: 60px;}
@@ -50,7 +50,6 @@
 	.at-headervtwo .at-contactsocial {padding: 25px 0 10px 30px;}
 	.at-headervtwo .at-navigationarea{padding: 0 20px;}
 	.at-headervtwo .at-logo {padding: 21px 0 0;}
-	.home-logo{width: 230px;}
 }
 @media (max-width:1279px){
 	.at-homeslidervthree .at-titleborder h2 {
@@ -72,7 +71,7 @@
 	.at-ptablefoot .at-btn {width: 100%;}
 	.at-aboutsectionvfourholder .at-textcontent{background: transparent;}
 	.at-homeslidervfour{min-height: 600px;}
-	.home-logo{width: 210px;}
+	.at-home .at-logo {width: 205px;}
 }
 @media (max-width:1080px){
 	.at-home .at-logo {padding: 29px 15px 0;}
@@ -137,7 +136,7 @@
 		font-size: 18px;
 		line-height: 24px;
 	}
-	.home-logo{width: 260px;}
+	.home-logo{width: 240px;}
 }
 @media (max-width:1050px){}
 @media (max-width:1024px){

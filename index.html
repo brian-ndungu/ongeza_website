@@ -75,7 +75,7 @@
 										<a href="#how">How It Works</a>
 									</li>
 									<li class="menu-item-has-children">
-										<a href="#clients">Our Clients</a>
+										<a href="#clients">Who's It For</a>
 									</li>
 									<li class="menu-item-has-children">
 										<a href="#" data-toggle="modal" data-target="#myModal">Submit Claim</a>
@@ -169,23 +169,125 @@
 		*************************************-->
 		<main id="at-main" class="at-main at-haslayout">
 			<!--************************************
-					Features Start
+					Quote Start
 			*************************************-->
-			<section class="at-featuresarea" id="service">
-				<div class="at-titleandbtn">
-					<h2>Investing in your <span>loved ones</span> certainty has never been so comforting.</h2>
-					<a class="at-btn at-btnb" href="#product">Product Features</a>
+			<section class="at-sectionspace at-parallex at-parallexhelping" id="quote">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<!-- <div class="at-helpingsmallbusinesses">
+								<h2>Always Here To Help</h2>
+								<h3>Get Life Cover Today For Life</h3>
+							</div> -->
+							<div class="at-requestacallback">
+								<div class="at-textcontent">
+									<div class="at-sectiontitleborder"><h2>Request a Quote</h2></div>
+									<div class="at-description">
+										<p>Leave your details below and our brokers will be sure to get in touch with you.</p>
+									</div>
+									<sub>* This is an estimate, complete the details below to get an official quote.</sub><br>
+									<div class="at-colcontact">
+										<h5>Life Cover offered is </h5>
+										<h3 id="recCoverVal"></h3>
+										<h6>for only </6>
+										<h3 id="recPremVal"></h3>
+										<h6><strong>once-off</strong> premium.</h6>
+									</div>
+								</div>
+								<form id="regForm" class="at-formtheme at-formrequestcallback">
+									<div id="steps" style="text-align:center;margin-top:40px;">
+										<span class="step"></span>
+										<span class="step"></span>
+										<span class="step"></span>
+									</div>
+									<fieldset>
+										<div class="tab">
+											<div class="form-group">
+												<h3>Your Details</h3>
+												<h5>Gender: </h5>
+												<label class="radio-inline" for="male">
+													<input type="radio" id="male" name="gender" value="M" checked> Male
+												</label>
+												<label  class="radio-inline" for="female">
+													<input type="radio" id="female" name="gender" value="F"> Female
+												</label>
+											</div>
+											<div class="form-group">
+												<h5>Date Of Birth: </h5>
+												<input type="date" name="dob" class="form-control" onchange="validateAge()" required>
+												<sub class="text-warning error-message" id="dob-error">Sorry, eligibility is from 18 to 66</sub>
+											</div>
+											<div class="form-group">
+												<h5>Average Gross Monthly Income: </h5>
+												<select id="incomeOptions" name="income">
+													<option value="1">R0 - R5 000</option>
+													<option value="2">R5 000 - R10 000</option>
+													<option value="3">R10 001 - R15 000</option>
+													<option value="4">R15 001 - R20 000</option>
+													<option value="5">R20 001 - R25 000</option>
+													<option value="6">R25 001 - R50 000</option>
+													<option value="7">R50 001 - R100 000</option>
+													<option value="7">R100 001 +</option>
+												  </select>
+											</div>
+										</div>
+										<div class="tab">
+											<h3>Option Details</h3>
+											<div class="form-group">
+												<span>Select ‘Premium’ to enter the amount of once-off premium and you’ll see how much cover this will buy you.<br>
+													Alternatively select ‘Cover’ to enter the amount of cover required and you’ll see how much once-off premium 
+													you’ll be required to pay.
+												</span><br>
+												<label class="radio-inline" for="premiumRadio">
+													<input type="radio" id="premiumRadio" name="insureType" value="premium" onclick="selectPremium()"> Premium
+												</label>
+												<label  class="radio-inline" for="coverRadio">
+													<input type="radio" id="coverRadio" name="insureType" value="cover" onclick="selectCover()"> Cover
+												</label>
+											</div>
+
+											
+											<div class="col-50">
+												<div class="form-group">
+													<input type="number" id="premiumInput" name="insureValue" class="form-control insure-value" placeholder="Premium" min="500" maxlength="6" onkeyup="getCover()">
+													<input type="number" id="coverInput" name="insureValue" class="form-control insure-value" placeholder="Cover" min="500" maxlength="9" onkeyup="getPremium()">
+													<sub class="text-warning error-message" id="prem-error"></sub>
+												</div>
+											</div>
+										</div>
+										<div class="tab">
+											<h3>Your Details: </h3>
+											<div class="form-group">
+												<input type="text" name="name" class="form-control" placeholder="Your Name">
+											</div>
+											<div class="form-group">
+												<input type="email" name="email" class="form-control" placeholder="Email Address" onkeyup="validateEmail()">
+												<sub class="text-warning error-message" id="email-error"></sub>
+											</div>
+											<div class="form-group">
+												<input type="text" name="number" class="form-control" placeholder="Phone Number" onkeyup="validateNumber()">
+												<sub class="text-warning error-message" id="number-error"></sub>
+											</div>
+										</div>
+										<div class="tab">
+											<h3>Successfully Sent!</h3>
+											<div class="at-description">
+												<p>Our brokers will be in contact shortly.</p><br>
+											</div>
+										</div>
+										<div class="at-btns">
+											<button type="button" class="at-btn at-btnb" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+											<button type="button" class="at-btn at-btnb" id="nextBtn" onclick="nextPrev(1)">Next</button>
+										</div>
+									</fieldset>
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="at-textcontent"><div class="at-description"><p>Now you can take out life cover for yourself and never have to worry about missing a debit order or
-					even having to go in for medicals. Ongeza life cover is providing you with the opportunity of being able to pay once and be covered for life.
-					From as little as R500 you could get up to R3 000 life cover.</p><br>
-					<p>If that's not enough then how about being able to top up your cover ANY TIME of the year? The first ever life cover to allow you to pay however much you
-						want when you want.</p><br>
-					<p>Ongeza life cover even allows you to take out life cover to benefit your employees and family members giving you certainty that their policy will never lapse.</p>
-				</div></div>
 			</section>
 			<!--************************************
-					Features End
+					Quote End
 			*************************************-->
 			<div class="clearfix"></div>
 			<!--************************************
@@ -203,10 +305,12 @@
 							<div class="at-textcontent">
 								<div class="at-sectiontitleborder"><h2>About Us</h2></div>
 								<div class="at-description">
-									<p>Ongeza Life brings a one of a kind product to its clients relating to life inurance.</p><br>
-									<p>Our objective is to offer a service providing life cover to anyone and everyone no matter their circumstance. We do this by requiring no bank statements, 
-										no proof of residence, no medicals and no monthly premiums making it easier for the customer to receive life cover.</p><br>
-									<p>All that we require is a valid ID number, your level of education and your contact information and that's it. Getting life has never been easier.</p>
+									<p>Ongeza Life (Pty) Limited is an authorized Financial Services Provider (FSP No. 50004), operating a life insurance cell captive underwritten by Guardrisk Life Limited (FSP No. 76).</p><br>
+									<p>The company is domiciled in Johannesburg, South Africa, but it has a national footprint through the digital platform as well as through the broker network.</p><br>
+									<p>Driven by an entrepreneurial spirit, the company developed a unique and innovative life insurance product that is the first of its kind internationally. 
+										The product is named Ongeza Life Plan (OLP). The name “Ongeza” means adding or accumulating in many African languages, resonating well with the product that is premised along the lines of accumulating life cover bought on a pay-as-you-go basis.</p><br>
+									<p>Ongeza Life is supported by reputable brands including Guardrisk (the Underwriter) and Munich Re (the Reinsurer), providing a great sense of confidence and security as we roll-out the Ongeza Life Plan in South Africa, 
+										with an aim of extending the roll-out to the rest of the continent in the near future.</p>
 								</div>
 							</div>
 						</section>
@@ -322,137 +426,205 @@
 			<!--************************************
 					How End
 			*************************************-->
-
+			<!-- <div class="clearfix"></div> -->
 			<!--************************************
-					Quote Start
+					Example Start
 			*************************************-->
-			<section class="at-sectionspace at-parallex at-parallexhelping" id="quote">
+			<section class="at-sectionspace at-haslayout at-bglight" id="example">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<div class="at-helpingsmallbusinesses">
-								<h2>Always Here To Help</h2>
-								<h3>Get Life Cover Today For Life</h3>
+						<div class="at-content">
+							<div class="at-sectiontitleborder"><h2>Example</h2></div>
+							<div class="at-discription">
+								<p>Six individuals with different profiles bought the policy on 1 December 2019. They then bought top-up covers after the first and also the second year.
+									<br>Their cover would grow as illustrated below:</p>
 							</div>
-							<div class="at-requestacallback">
-								<div class="at-textcontent">
-									<div class="at-sectiontitleborder"><h2>Request a Quote</h2></div>
-									<div class="at-description">
-										<p>Leave your details below and our brokers will be sure to get in touch with you.</p>
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3">
+									<div class="text-center">
+										<h3>Initial Purchase</h3>
 									</div>
-									<sub>* This is an estimate, complete the details below to get an official quote.</sub><br>
-									<div class="at-colcontact">
-										<h5>Life Cover offered is </h5>
-										<h3 id="recCoverVal"></h3>
-										<h6>for only </6>
-										<h3 id="recPremVal"></h3>
-										<h6><strong>once-off</strong> premium.</h6>
+									<div class="table-responsive">
+										<table class="table table-striped table-hover" id="initial">
+											<thead>
+												<tr>
+													<th>Age next birthday</th>
+													<th>Gender</th>
+													<th>Average monthly income</th>
+													<th>Once off premium</th>
+													<th>Cover for Life</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>25</td>
+													<td>Female</td>
+													<td>R35 000</td>
+													<td>R1 000</td>
+													<td>R7 980</td>
+												</tr>
+												<tr>
+													<td>28</td>
+													<td>Male</td>
+													<td> R23 000</td>
+													<td>R1 000</td>
+													<td>R4 982</td>
+												</tr>
+												<tr>
+													<td>40</td>
+													<td>Female</td>
+													<td>R15 000</td>
+													<td>R1 000</td>
+													<td>R3 485</td>
+												</tr>
+												<tr>
+													<td>40</td>
+													<td>Male</td>
+													<td>R100 000</td>
+													<td>R1 000</td>
+													<td>R3 796</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>Female</td>
+													<td>R65 000</td>
+													<td>R1 000</td>
+													<td>R6 784</td>
+												</tr>
+												<tr>
+													<td>52</td>
+													<td>Male</td>
+													<td>R28 000</td>
+													<td>R1 000</td>
+													<td>R2 271</td>
+												</tr>
+											</tbody>
+										</table>
 									</div>
 								</div>
-								<form id="regForm" class="at-formtheme at-formrequestcallback">
-									<div id="steps" style="text-align:center;margin-top:40px;">
-										<span class="step"></span>
-										<span class="step"></span>
-										<span class="step"></span>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-left">
+									<div class="at-textcontent text-center">
+										<h3>Top-Up 1 year later</h3>
 									</div>
-									<fieldset>
-										<div class="tab">
-											<div class="form-group">
-												<h3>Your Details</h3>
-												<h5>Gender: </h5>
-												<label class="radio-inline" for="male">
-													<input type="radio" id="male" name="gender" value="M" checked> Male
-												</label>
-												<label  class="radio-inline" for="female">
-													<input type="radio" id="female" name="gender" value="F"> Female
-												</label>
-											</div>
-											<div class="form-group">
-												<h5>Date Of Birth: </h5>
-												<input type="date" name="dob" class="form-control" onchange="validateAge()" required>
-												<sub class="text-warning error-message" id="dob-error">Sorry, eligibility is from 18 to 66</sub>
-											</div>
-											<div class="form-group">
-												<h5>Average Gross Monthly Income: </h5>
-												<select id="incomeOptions" name="income">
-													<option value="1">R0 - R5 000</option>
-													<option value="2">R5 000 - R10 000</option>
-													<option value="3">R10 001 - R15 000</option>
-													<option value="4">R15 001 - R20 000</option>
-													<option value="5">R20 001 - R25 000</option>
-													<option value="6">R25 001 - R50 000</option>
-													<option value="7">R50 001 - R100 000</option>
-													<option value="7">R100 001 +</option>
-												  </select>
-											</div>
-										</div>
-										<div class="tab">
-											<h3>Option Details</h3>
-											<div class="form-group">
-												<span>Select ‘Premium’ to enter the amount of once-off premium and you’ll see how much cover this will buy you.<br>
-													Alternatively select ‘Cover’ to enter the amount of cover required and you’ll see how much once-off premium 
-													you’ll be required to pay.
-												</span><br>
-												<label class="radio-inline" for="premiumRadio">
-													<input type="radio" id="premiumRadio" name="insureType" value="premium" onclick="selectPremium()"> Premium
-												</label>
-												<label  class="radio-inline" for="coverRadio">
-													<input type="radio" id="coverRadio" name="insureType" value="cover" onclick="selectCover()"> Cover
-												</label>
-											</div>
-
-											
-											<div class="col-50">
-												<div class="form-group">
-													<input type="number" id="premiumInput" name="insureValue" class="form-control insure-value" placeholder="Premium" min="500" maxlength="6" onkeyup="getCover()">
-													<input type="number" id="coverInput" name="insureValue" class="form-control insure-value" placeholder="Cover" min="500" maxlength="9" onkeyup="getPremium()">
-													<sub class="text-warning error-message" id="prem-error"></sub>
-												</div>
-											</div>
-										</div>
-										<div class="tab">
-											<h3>Your Details: </h3>
-											<div class="form-group">
-												<input type="text" name="name" class="form-control" placeholder="Your Name">
-											</div>
-											<div class="form-group">
-												<input type="email" name="email" class="form-control" placeholder="Email Address" onkeyup="validateEmail()">
-												<sub class="text-warning error-message" id="email-error"></sub>
-											</div>
-											<div class="form-group">
-												<input type="text" name="number" class="form-control" placeholder="Phone Number" onkeyup="validateNumber()">
-												<sub class="text-warning error-message" id="number-error"></sub>
-											</div>
-										</div>
-										<div class="tab">
-											<h3>Successfully Sent!</h3>
-											<div class="at-description">
-												<p>Our brokers will be in contact shortly.</p><br>
-											</div>
-										</div>
-										<div class="at-btns">
-											<button type="button" class="at-btn at-btnb" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-											<button type="button" class="at-btn at-btnb" id="nextBtn" onclick="nextPrev(1)">Next</button>
-										</div>
-									</fieldset>
-								</form>
+									<div class="table-responsive">
+										<table class="table table-striped table-hover table-responsive">
+											<tr>
+												<th>Age next birthday</th>
+												<th>Once off premium</th>
+												<th>Cover for Life</th>
+												<th>New accumulated Cover for Life</th>
+											</tr>
+											<tr>
+												<td class="ongeza-c-blue">26</td>
+												<td class="ongeza-c-blue">R2 000</td>
+												<td class="ongeza-c-blue">R17 576</td>
+												<td class="ongeza-c-blue">R25 556</td>
+											</tr>
+											<tr>
+												<td class="ongeza-c-blue">29</td>
+												<td class="ongeza-c-blue">R500</td>
+												<td class="ongeza-c-blue">R2 309</td>
+												<td class="ongeza-c-blue">R7 291</td>
+											</tr>
+											<tr>
+												<td class="ongeza-c-blue">41</td>
+												<td class="ongeza-c-blue">R700</td>
+												<td class="ongeza-c-blue">R2 418</td>
+												<td class="ongeza-c-blue">R5 903</td>
+											</tr>
+											<tr>
+												<td class="ongeza-c-blue">41</td>
+												<td class="ongeza-c-blue">R5 000</td>
+												<td class="ongeza-c-blue">R21 572</td>
+												<td class="ongeza-c-blue">R25 368</td>
+											</tr>
+											<tr>
+												<td class="ongeza-c-blue">33</td>
+												<td class="ongeza-c-blue">R4 500</td>
+												<td class="ongeza-c-blue">R34 626</td>
+												<td class="ongeza-c-blue">R41 410</td>
+											</tr>
+											<tr>
+												<td class="ongeza-c-blue">53</td>
+												<td class="ongeza-c-blue">R3 500</td>
+												<td class="ongeza-c-blue">R8 969</td>
+												<td class="ongeza-c-blue">R11 240</td>
+											</tr>
+										</table>	
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-right">
+									<div class="at-textcontent text-center">
+										<h3>Top-up 2 years later</h3>
+									</div>
+									<div class="table-responsive">
+										<table class="table table-striped table-hover table-responsive">
+											<tr>
+												<th>Age next birthday</th>
+												<th>Once off premium</th>
+												<th>Cover for life</th>
+												<th>New accumulated Cover for Life</th>
+											</tr>
+											<tr>
+												<td>27</td>
+												<td>R3 000</td>
+												<td>R25 880</td>
+												<td>R51 436</td>
+											</tr>
+											<tr>
+												<td>30</td>
+												<td>R750</td>
+												<td>R3 631</td>
+												<td>R10 922</td>
+											</tr>
+											<tr>
+												<td>42</td>
+												<td>R800</td>
+												<td>R2 717</td>
+												<td>R8 620</td>
+											</tr>
+											<tr>
+												<td>42</td>
+												<td>R7 000</td>
+												<td>R29 288</td>
+												<td>R54 656</td>
+											</tr>
+											<tr>
+												<td>34</td>
+												<td>R5 000</td>
+												<td>R37 179</td>
+												<td>R78 589</td>
+											</tr>
+											<tr>
+												<td>54</td>
+												<td>R3 500</td>
+												<td>R8 667</td>
+												<td>R19 907</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div class="at-description">
+								<p><em>Top-ups can continue in future until the life assured/policyholder reaches his/her desired maont of cover, subject to a maximum of R1m or until s/he attaints age 66.</em></p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 			<!--************************************
-					Quote End
+					Example Back End
 			*************************************-->
-			<div class="clearfix"></div>
 			<!--************************************
 					Ideal Clients Start
 			*************************************-->
-			<section class="at-sectionspace" id="clients">
+			<section class="at-sectionspace at-haslayout" id="clients">
 				<div class="container">
 					<div class="row">
 						<div class="at-content">
-							<div class="at-sectiontitleborder"><h2>Perfect Clients</h2></div>
+							<div class="at-sectiontitleborder"><h2>Most Suitable For</h2></div>
 							<div class="at-faqarea">
 								<div class="at-faqcategory">
 									<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 pull-left">
@@ -648,7 +820,7 @@
 															<p>Repatriation costs can be quite high, not to mention any other financial obligations that would require to be settled before the repatriation.</p>
 															<p>OLP is an ideal platform for the member of the diaspora to start building a fund progressively over the years until a desired amount is reached.</p>
 															<p>Note that this is an insured product, strictly regulated. In the event of death, the policy will certainly pay much more than the premiums paid.</p>
-															<p>One of our brokers, Maksure Risk Solutions, has a panel of efficient and professional undertakers who do cross-border repatriations.</p>
+															<p>One of our brokers, <a href="https://www.maksure.co.za">Maksure Risk Solutions</a>, has a panel of efficient and professional undertakers who do cross-border repatriations.</p>
 														</div>
 													</div>
 												</div>
@@ -665,194 +837,7 @@
 			<!--************************************
 					Ideal Clients End
 			*************************************-->
-			<!--************************************
-					Example Start
-			*************************************-->
-			<section class="at-sectionspace at-haslayout at-bglight" id="example">
-				<div class="container">
-					<div class="row">
-						<div class="at-content">
-							<div class="at-sectiontitleborder"><h2>Example</h2></div>
-							<div class="at-discription">
-								<p>Six individuals with different profiles bought the policy on 1 December 2019. They then bought top-up covers after the first and also the second year.
-									<br>Their cover would grow as illustrated below:</p>
-							</div>
-							<div class="row">
-								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3">
-									<div class="text-center">
-										<h3>Initial Purchase</h3>
-									</div>
-									<div class="table-responsive">
-										<table class="table table-striped table-hover" id="initial">
-											<thead>
-												<tr>
-													<th>Age next birthday</th>
-													<th>Gender</th>
-													<th>Average monthly income</th>
-													<th>Once off premium</th>
-													<th>Cover for Life</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>25</td>
-													<td>Female</td>
-													<td>R35 000</td>
-													<td>R1 000</td>
-													<td>R7 980</td>
-												</tr>
-												<tr>
-													<td>28</td>
-													<td>Male</td>
-													<td> R23 000</td>
-													<td>R1 000</td>
-													<td>R4 982</td>
-												</tr>
-												<tr>
-													<td>40</td>
-													<td>Female</td>
-													<td>R15 000</td>
-													<td>R1 000</td>
-													<td>R3 485</td>
-												</tr>
-												<tr>
-													<td>40</td>
-													<td>Male</td>
-													<td>R100 000</td>
-													<td>R1 000</td>
-													<td>R3 796</td>
-												</tr>
-												<tr>
-													<td>32</td>
-													<td>Female</td>
-													<td>R65 000</td>
-													<td>R1 000</td>
-													<td>R6 784</td>
-												</tr>
-												<tr>
-													<td>52</td>
-													<td>Male</td>
-													<td>R28 000</td>
-													<td>R1 000</td>
-													<td>R2 271</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-left">
-									<div class="at-textcontent text-center">
-										<h3>Top-Up 1 year later</h3>
-									</div>
-									<div class="table-responsive">
-										<table class="table table-striped table-hover table-responsive">
-											<tr>
-												<th>Age next birthday</th>
-												<th>Once off premium</th>
-												<th>Cover for Life</th>
-												<th>New accumulated Cover for Life</th>
-											</tr>
-											<tr>
-												<td class="ongeza-c-blue">26</td>
-												<td class="ongeza-c-blue">R2 000</td>
-												<td class="ongeza-c-blue">R17 576</td>
-												<td class="ongeza-c-blue">R25 556</td>
-											</tr>
-											<tr>
-												<td class="ongeza-c-blue">29</td>
-												<td class="ongeza-c-blue">R500</td>
-												<td class="ongeza-c-blue">R2 309</td>
-												<td class="ongeza-c-blue">R7 291</td>
-											</tr>
-											<tr>
-												<td class="ongeza-c-blue">41</td>
-												<td class="ongeza-c-blue">R700</td>
-												<td class="ongeza-c-blue">R2 418</td>
-												<td class="ongeza-c-blue">R5 903</td>
-											</tr>
-											<tr>
-												<td class="ongeza-c-blue">41</td>
-												<td class="ongeza-c-blue">R5 000</td>
-												<td class="ongeza-c-blue">R21 572</td>
-												<td class="ongeza-c-blue">R25 368</td>
-											</tr>
-											<tr>
-												<td class="ongeza-c-blue">33</td>
-												<td class="ongeza-c-blue">R4 500</td>
-												<td class="ongeza-c-blue">R34 626</td>
-												<td class="ongeza-c-blue">R41 410</td>
-											</tr>
-											<tr>
-												<td class="ongeza-c-blue">53</td>
-												<td class="ongeza-c-blue">R3 500</td>
-												<td class="ongeza-c-blue">R8 969</td>
-												<td class="ongeza-c-blue">R11 240</td>
-											</tr>
-										</table>	
-									</div>
-								</div>
-								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-right">
-									<div class="at-textcontent text-center">
-										<h3>Top-up 2 years later</h3>
-									</div>
-									<div class="table-responsive">
-										<table class="table table-striped table-hover table-responsive">
-											<tr>
-												<th>Age next birthday</th>
-												<th>Once off premium</th>
-												<th>Cover for life</th>
-												<th>New accumulated Cover for Life</th>
-											</tr>
-											<tr>
-												<td>27</td>
-												<td>R3 000</td>
-												<td>R25 880</td>
-												<td>R51 436</td>
-											</tr>
-											<tr>
-												<td>30</td>
-												<td>R750</td>
-												<td>R3 631</td>
-												<td>R10 922</td>
-											</tr>
-											<tr>
-												<td>42</td>
-												<td>R800</td>
-												<td>R2 717</td>
-												<td>R8 620</td>
-											</tr>
-											<tr>
-												<td>42</td>
-												<td>R7 000</td>
-												<td>R29 288</td>
-												<td>R54 656</td>
-											</tr>
-											<tr>
-												<td>34</td>
-												<td>R5 000</td>
-												<td>R37 179</td>
-												<td>R78 589</td>
-											</tr>
-											<tr>
-												<td>54</td>
-												<td>R3 500</td>
-												<td>R8 667</td>
-												<td>R19 907</td>
-											</tr>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
 			
-			<!--************************************
-					Example Back End
-			*************************************-->
 			<!--************************************
 					Contact Us Start
 			*************************************-->
@@ -947,7 +932,7 @@
 							<div class="at-threecolumns">
 								<div class="at-fcolumn">
 									<div class="at-widget at-widgettext">
-										<strong class="at-logo"><a href="javascript:void(0);"><img src="images/logo_o.png" alt="image description"></a></strong>
+										<strong class="at-logo"><a href="javascript:void(0);"><img src="images/logo_w.png" alt="image description"></a></strong>
 										<div class="at-description">
 											<p>Ongeza Life (Pty) Ltd, is an authorised Financial Services Provider, FSP No. 50004.</p>
 										</div>
@@ -991,6 +976,9 @@
 		<!--************************************
 				Footer End
 		*************************************-->
+		<!--************************************
+				Modal Start
+		*************************************-->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog" role="document">
 			  <div class="modal-content">
@@ -1018,6 +1006,9 @@
 			  </div>
 			</div>
 		</div>
+		<!--************************************
+				Modal End
+		*************************************-->
 	</div>
 	<!--************************************
 			Wrapper End

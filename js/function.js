@@ -877,8 +877,8 @@ function getPremium(){
 			Channel: "Ongeza Website",
 			ContactName: document.forms["regForm"]["name"].value,
 			Message: "Please contact me for an Ongeza Life Quote. My contact details are as follow:"+"\n"+"Name: "+
-				document.forms["regForm"]["name"].value+"\n"+"Email address: temp@test.com"+"\n\n"+"Cellular number: "+
-				document.forms["regForm"]["number"].value+"\n\n"+
+				document.forms["regForm"]["name"].value+"\n"+"Email address: "+document.forms["regForm"]["email"].value+"\n\n"+
+				"Cellular number: "+document.forms["regForm"]["number"].value+"\n\n"+
 				"Gender: "+document.forms["regForm"]["gender"].value+"\n"+
 				"Date of Birth: "+document.forms["regForm"]["dob"].value+"\n"+
 				"Age next birthday: "+age+"\n"+
