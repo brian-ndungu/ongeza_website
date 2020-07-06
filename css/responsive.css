@@ -67,6 +67,10 @@
 	}
 	.at-servicetabsnav {font-size: 14px;}
 }
+@media (max-width:1260px){
+	.at-homeone .at-navigationarea {padding: 22px 12px 0;}
+	.at-navigation > ul > li {margin: 5px 6px 0;}z
+}
 @media (max-width:1199px){
 	.at-ptablefoot .at-btn {width: 100%;}
 	.at-aboutsectionvfourholder .at-textcontent{background: transparent;}
@@ -74,7 +78,7 @@
 	.at-home .at-logo {width: 205px;}
 }
 @media (max-width:1080px){
-	.at-home .at-logo {padding: 29px 15px 0;}
+	.at-home .at-logo {padding: 12px 15px 0;}
 	.at-navigationarea {padding: 25px 10px 0;}
 	.at-navigation > ul > li {margin: 8px 0 0;}
 	.at-navigation ul li a {padding: 0 10px 27px;}

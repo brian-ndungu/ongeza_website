@@ -308,46 +308,6 @@ jQuery(document).on('ready', function() {
 		});
 	}
 	/*--------------------------------------
-			Google Map
-	--------------------------------------*/
-	if(jQuery('#at-locationmap').length > 0){
-		var gmapStyles = [
-			{"featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{"color": "#444444"}]},
-			{"featureType": "landscape", "elementType": "all", "stylers": [{"color": "#f2f2f2"}]},
-			{"featureType": "poi", "elementType": "all", "stylers": [{"visibility": "off"}]},
-			{"featureType": "road", "elementType": "all", "stylers": [{"saturation": -100}, {"lightness": 45}]},
-			{"featureType": "road.highway","elementType": "all","stylers": [{"visibility": "simplified"}]},
-			{"featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]},
-			{"featureType": "transit","elementType": "all","stylers": [{"visibility": "off"}]},
-			{"featureType": "water","elementType": "all","stylers": [{"color": "#46bcec"},{"visibility": "on"}]},
-			{"featureType": "water","elementType": "geometry.fill","stylers": [{"color": "#47bcec"}]}
-		];
-		var _tg_locationmap = jQuery('#at-locationmap');
-		_tg_locationmap.gmap3({
-			marker: {
-				address: 'New York, USA',
-				options: {
-					title: 'Robert Frost Elementary School',
-					icon: "images/pin.png",
-					animation: google.maps.Animation.BOUNCE,
-				}
-			},
-			map: {
-				options: {
-					zoom: 12,
-					styles: gmapStyles,
-					scaleControl: true,
-					scrollwheel: false,
-					mapTypeControl: false,
-					disableDefaultUI: true,
-					navigationControl: false,
-					streetViewControl: false,
-					disableDoubleClickZoom: true,
-				}
-			}
-		});
-	}
-	/*--------------------------------------
 			PRETTY PHOTO GALLERY			
 	--------------------------------------*/
 	if(jQuery('#at-gallery').length > 0){
