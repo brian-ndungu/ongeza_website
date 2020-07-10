@@ -7,7 +7,7 @@ jQuery(document).on('ready', function() {
 			MOBILE MENU						
 	--------------------------------------*/
 	function collapseMenu(){
-		jQuery('.at-navigation ul li.menu-item-has-children, .at-navigation ul li.menu-item-has-mega-menu').prepend('<span class="at-dropdowarrow"><i class="fa fa-angle-down"></i></span>');
+		jQuery('.at-navigation ul li.menu-item-has-children, .at-navigation ul li.menu-item-has-mega-menu');
 		jQuery('.at-navigation ul li.menu-item-has-children span, .at-navigation ul li.menu-item-has-mega-menu span').on('click', function() {
 			jQuery(this).parent('li').toggleClass('at-open');
 			jQuery(this).next().next().slideToggle(300);
@@ -570,6 +570,7 @@ function showTab(n) {
   if (n == 0) {
 	document.getElementById("prevBtn").style.display = "none";
 	document.getElementsByClassName("at-colcontact")[0].style.display = "none";
+	document.getElementsByClassName("at-colcontact")[1].style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
@@ -778,9 +779,13 @@ function getCover(){
 			request.onload = () => {
 				var res = JSON.parse(request.responseText);
 				document.getElementsByClassName("at-colcontact")[0].style.display = "block";
-				document.getElementById("recCoverVal").innerHTML= "R"+numberWithCommas(res.response.SumInsured);
-				document.getElementById("recPremVal").innerHTML= "R"+numberWithCommas(insVal);
+				document.getElementsByClassName("at-colcontact")[1].style.display = "block";
+				document.getElementsByClassName("recCoverVal")[0].innerHTML= "R"+numberWithCommas(res.response.SumInsured);
+				document.getElementsByClassName("recCoverVal")[1].innerHTML= "R"+numberWithCommas(res.response.SumInsured);
+				document.getElementsByClassName("recPremVal")[0].innerHTML= "R"+numberWithCommas(insVal);
+				document.getElementsByClassName("recPremVal")[1].innerHTML= "R"+numberWithCommas(insVal);
 				document.getElementById("coverInput").value = res.response.SumInsured;
+
 				// console.log(request.responseText);
 			}
 			const requestData = JSON.stringify(premiumData);
@@ -790,6 +795,7 @@ function getCover(){
 		}
 	}else{
 		document.getElementsByClassName("at-colcontact")[0].style.display ="none";
+		document.getElementsByClassName("at-colcontact")[1].style.display ="none";
 		document.getElementById("coverInput").value = "";
 	}
 }
@@ -811,10 +817,12 @@ function getPremium(){
 			request.onload = () => {
 				var res = JSON.parse(request.responseText);
 				document.getElementsByClassName("at-colcontact")[0].style.display = "block";
-				document.getElementById("recCoverVal").innerHTML= "R"+numberWithCommas(insVal);
-				document.getElementById("recPremVal").innerHTML= "R"+numberWithCommas(res.response.Premium);
+				document.getElementsByClassName("at-colcontact")[1].style.display = "block";
+				document.getElementsByClassName("recCoverVal")[0].innerHTML= "R"+numberWithCommas(insVal);
+				document.getElementsByClassName("recCoverVal")[1].innerHTML= "R"+numberWithCommas(insVal);
+				document.getElementsByClassName("recPremVal")[0].innerHTML= "R"+numberWithCommas(res.response.Premium);
+				document.getElementsByClassName("recPremVal")[1].innerHTML= "R"+numberWithCommas(res.response.Premium);
 				document.getElementById("premiumInput").value = res.response.Premium;
-				// console.log(request.responseText);
 			}
 			const requestData = JSON.stringify(coverData);
 			request.open('post','https://ongeza.cloudcover.insure/CloudCoverServices/ApiCalcPremium');
@@ -823,6 +831,7 @@ function getPremium(){
 		}
 	}else{
 		document.getElementsByClassName("at-colcontact")[0].style.display ="none";
+		document.getElementsByClassName("at-colcontact")[1].style.display ="none";
 		document.getElementById("premiumInput").value = "";
 	}
 }
