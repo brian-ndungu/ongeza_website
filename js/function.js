@@ -786,8 +786,8 @@ function getCover(){
 				var res = JSON.parse(request.responseText);
 				document.getElementsByClassName("at-colcontact")[0].style.display = "block";
 				document.getElementsByClassName("at-colcontact")[1].style.display = "block";
-				document.getElementsByClassName("by-line")[0].style.display = "block";
-				document.getElementsByClassName("by-line")[1].style.display = "block";
+				document.getElementsByClassName("by-line")[0].style.display = "inline";
+				document.getElementsByClassName("by-line")[1].style.display = "inline";
 				document.getElementsByClassName("recCoverVal")[0].innerHTML= "R"+numberWithCommas(res.response.SumInsured);
 				document.getElementsByClassName("recCoverVal")[1].innerHTML= "R"+numberWithCommas(res.response.SumInsured);
 				document.getElementsByClassName("recPremVal")[0].innerHTML= "R"+numberWithCommas(insVal);
@@ -828,8 +828,8 @@ function getPremium(){
 				var res = JSON.parse(request.responseText);
 				document.getElementsByClassName("at-colcontact")[0].style.display = "block";
 				document.getElementsByClassName("at-colcontact")[1].style.display = "block";
-				document.getElementsByClassName("by-line")[0].style.display = "block";
-				document.getElementsByClassName("by-line")[1].style.display = "block";
+				document.getElementsByClassName("by-line")[0].style.display = "inline";
+				document.getElementsByClassName("by-line")[1].style.display = "inline";
 				document.getElementsByClassName("recCoverVal")[0].innerHTML= "R"+numberWithCommas(insVal);
 				document.getElementsByClassName("recCoverVal")[1].innerHTML= "R"+numberWithCommas(insVal);
 				document.getElementsByClassName("recPremVal")[0].innerHTML= "R"+numberWithCommas(res.response.Premium);
