@@ -652,7 +652,7 @@ function validateForm(n) {
 function validateAge(){
 	var dob = document.getElementsByName("dob")[0];
 	var age = getAge(dob.value);
-	if(age<=18 ||age>=66){
+	if(age<=17 ||age>=67){
 		dob.className += " invalid";
 		document.getElementById("dob-error").style.display = "inline";
 		return false;
@@ -688,7 +688,7 @@ function validateCover(){
 	if(cover<500){
 		document.getElementById("premiumInput").className += " invalid";
 		document.getElementById("prem-error").style.display = "inline";
-		document.getElementById("prem-error").innerText = "Sorry, minimum cover is R500";
+		document.getElementById("prem-error").innerText = "Please enter a valid cover.";
 		// alert("Sorry, minimum premium is R500");  
 		return false;
 	}else if(cover>150000){
