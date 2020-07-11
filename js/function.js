@@ -571,6 +571,8 @@ function showTab(n) {
 	document.getElementById("prevBtn").style.display = "none";
 	document.getElementsByClassName("at-colcontact")[0].style.display = "none";
 	document.getElementsByClassName("at-colcontact")[1].style.display = "none";
+	document.getElementsByClassName("by-line")[0].style.display = "none";
+	document.getElementsByClassName("by-line")[1].style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
@@ -597,7 +599,10 @@ function nextPrev(n) {
   // Exit the function if any field in the current tab is invalid:
   
   if (n == 1 && !validateForm(n)) return false;
-  
+  if (n ==-1 && currentTab==1){
+	  document.getElementById("coverInput").value="";
+	  document.getElementById("premiumInput").value="";
+  }
   // Hide the current tab:
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
@@ -781,6 +786,8 @@ function getCover(){
 				var res = JSON.parse(request.responseText);
 				document.getElementsByClassName("at-colcontact")[0].style.display = "block";
 				document.getElementsByClassName("at-colcontact")[1].style.display = "block";
+				document.getElementsByClassName("by-line")[0].style.display = "block";
+				document.getElementsByClassName("by-line")[1].style.display = "block";
 				document.getElementsByClassName("recCoverVal")[0].innerHTML= "R"+numberWithCommas(res.response.SumInsured);
 				document.getElementsByClassName("recCoverVal")[1].innerHTML= "R"+numberWithCommas(res.response.SumInsured);
 				document.getElementsByClassName("recPremVal")[0].innerHTML= "R"+numberWithCommas(insVal);
@@ -797,6 +804,8 @@ function getCover(){
 	}else{
 		document.getElementsByClassName("at-colcontact")[0].style.display ="none";
 		document.getElementsByClassName("at-colcontact")[1].style.display ="none";
+		document.getElementsByClassName("by-line")[0].style.display = "none";
+		document.getElementsByClassName("by-line")[1].style.display = "none";
 		document.getElementById("coverInput").value = "";
 	}
 }
@@ -819,6 +828,8 @@ function getPremium(){
 				var res = JSON.parse(request.responseText);
 				document.getElementsByClassName("at-colcontact")[0].style.display = "block";
 				document.getElementsByClassName("at-colcontact")[1].style.display = "block";
+				document.getElementsByClassName("by-line")[0].style.display = "block";
+				document.getElementsByClassName("by-line")[1].style.display = "block";
 				document.getElementsByClassName("recCoverVal")[0].innerHTML= "R"+numberWithCommas(insVal);
 				document.getElementsByClassName("recCoverVal")[1].innerHTML= "R"+numberWithCommas(insVal);
 				document.getElementsByClassName("recPremVal")[0].innerHTML= "R"+numberWithCommas(res.response.Premium);
@@ -833,6 +844,8 @@ function getPremium(){
 	}else{
 		document.getElementsByClassName("at-colcontact")[0].style.display ="none";
 		document.getElementsByClassName("at-colcontact")[1].style.display ="none";
+		document.getElementsByClassName("by-line")[0].style.display = "none";
+		document.getElementsByClassName("by-line")[1].style.display = "none";
 		document.getElementById("premiumInput").value = "";
 	}
 }
