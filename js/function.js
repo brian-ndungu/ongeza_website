@@ -654,6 +654,7 @@ function validateAge(){
 	var age = getAge(dob.value);
 	if(age<=17 ||age>=67){
 		dob.className += " invalid";
+		console.log(age);
 		document.getElementById("dob-error").style.display = "inline";
 		return false;
 	}else{
