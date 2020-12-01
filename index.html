@@ -254,6 +254,25 @@
 											<div class="form-group">
 												<h5>Date Of Birth: </h5>
 												<input type="date" name="dob" class="form-control" onchange="validateAge()" required>
+												<div>
+													<div style="display: inline-block;">
+														<h5>Day</h5>
+														<input style="width: 6em; margin-right: 2em;" type="number" name="dob-day" class="form-control" onchange=""
+															min="1" max="31">
+													</div>
+													<div style="display: inline-block;">
+														<h5>Month</h5>
+														<input style="width: 6em; margin-right: 2em;" type="number" name="dob-month" class="form-control" onchange=""
+															min="1" max="12">
+													</div>
+													
+													<div style="display: inline-block;">
+														<h5>Year</h5>
+													<input style="width: 10em;" type="number" name="dob-year" class="form-control" onchange="" min="1900">
+													</div>
+													
+												</div>
+												<sub class="text-warning error-message" id="dob-invalid-date">You have entered an invalid date.</sub>
 												<sub class="text-warning error-message" id="dob-error">Sorry, eligibility is from 18 to 66</sub>
 											</div>
 											<div class="form-group">
