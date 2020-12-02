@@ -664,6 +664,7 @@ function isValidDayInput() {
 	if (Number.isNaN(dobDay.value) || !(dayEntered >= 1 && dayEntered <= 31)) {
 		dobDay.className += " invalid";
 		document.getElementById("dob-invalid-day").style.display = "block";
+		document.getElementById("nextBtn").className += " button-disabled";
 		return false;
 	}
 
@@ -678,6 +679,7 @@ function isValidMonthInput() {
 	if (Number.isNaN(dobMonth.value) || !(monthEntered >= 1 && monthEntered <= 12)) {
 		dobMonth.className += " invalid";
 		document.getElementById("dob-invalid-month").style.display = "block";
+		document.getElementById("nextBtn").className += " button-disabled";
 		return false;
 	}
 	
@@ -693,6 +695,7 @@ function isValidYearInput() {
 	if (Number.isNaN(dobYear.value) || !(yearEntered >= 1900 && yearEntered <= new Date().getFullYear())) {
 		dobYear.className += " invalid";
 		document.getElementById("dob-invalid-year").style.display = "inline";
+		document.getElementById("nextBtn").className += " button-disabled";
 		return false;
 	}
 	
@@ -872,7 +875,7 @@ function validateNumber(){
 		return false;
 	}
 	document.getElementById("number-error").style.display = "none";
-	document.getElementsByName("email")[0].classList.remove("invalid");
+	document.getElementsByName("number")[0].classList.remove("invalid");
 	return true;
 }
 
@@ -1011,7 +1014,7 @@ function getPremium(){
 				document.forms["regForm"]["name"].value+"\n"+"Email: "+document.forms["regForm"]["email"].value+"\n\n"+
 				"Cell: "+document.forms["regForm"]["number"].value+"\n\n"+
 				"Sex: "+document.forms["regForm"]["gender"].value+"\n"+
-				"DOB: "+`${dobYear}/${dobMonth}/${dobDay}`+"\n"+
+				"DOB: "+`${dobYear.value}/${dobMonth.value}/${dobDay.value}`+"\n"+
 				"Age: "+age+"\n"+
 				"Income level: ("+document.forms["regForm"]["income"].value+") "+income[document.forms["regForm"]["income"].value-1]+"\n"+
 				"Premium: "+document.forms["regForm"]["premiumInput"].value+"\n"+
