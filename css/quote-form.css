@@ -1,4 +1,5 @@
 .dob-fields-group {
+    margin-top: -1em;
     margin-bottom: 0.5em;
 }
 
@@ -15,4 +16,8 @@ div.dob-field {
 .dob-input {
     width: 6em; 
     margin-right: 2em;
+}
+
+.at-btn.at-btnb.button-disabled {
+    background: #60a1cc;
 }

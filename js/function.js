@@ -599,7 +599,7 @@ function nextPrev(n) {
   // Exit the function if any field in the current tab is invalid:
   
   if (n == 1 && !validateForm(n)) return false;
-  if (n ==-1 && currentTab==1){
+  if (n ==-1 && currentTab==1) {
 	  document.getElementById("coverInput").value="";
 	  document.getElementById("premiumInput").value="";
   }
@@ -659,7 +659,6 @@ function validateForm(n) {
 
 function isValidDayInput() {
 	let dobDay = document.getElementsByName("dob-day")[0];
-	console.log(dobDay, dobDay.value);
 	const dayEntered = Number(dobDay.value);
 
 	if (Number.isNaN(dobDay.value) || !(dayEntered >= 1 && dayEntered <= 31)) {
@@ -675,7 +674,6 @@ function isValidDayInput() {
 
 function isValidMonthInput() {
 	let dobMonth = document.getElementsByName("dob-month")[0];
-	console.log(dobMonth, dobMonth.value);
 	const monthEntered = Number(dobMonth.value);
 	if (Number.isNaN(dobMonth.value) || !(monthEntered >= 1 && monthEntered <= 12)) {
 		dobMonth.className += " invalid";
@@ -690,7 +688,6 @@ function isValidMonthInput() {
 
 function isValidYearInput() {
 	let dobYear = document.getElementsByName("dob-year")[0];
-	console.log(dobYear, dobYear.value);
 
 	const yearEntered = Number(dobYear.value);
 	if (Number.isNaN(dobYear.value) || !(yearEntered >= 1900 && yearEntered <= new Date().getFullYear())) {
@@ -715,6 +712,7 @@ function displayInvalidDateMessage(showMessage = true) {
 	if (showMessage) {
 		document.getElementById("dob-invalid-date").style.display = "block";
 	}
+	document.getElementById("nextBtn").className += " button-disabled";
 }
 
 function removeInvalidDateMessage() {
@@ -727,6 +725,7 @@ function removeInvalidDateMessage() {
 	dobDay.classList.remove("invalid");
 	dobMonth.classList.remove("invalid");
 	dobYear.classList.remove("invalid");
+	document.getElementById("nextBtn").classList.remove("button-disabled");
 }
 
 function getMaxDayInMonth(month, year) {
@@ -790,7 +789,6 @@ function validateAge(){
 	if (!isValidDate()) {
 		return false;
 	}
-	console.log(`Checking age eligibility ...`);
 	let dobDay = document.getElementsByName("dob-day")[0];
 	let dobMonth = document.getElementsByName("dob-month")[0];
 	let dobYear = document.getElementsByName("dob-year")[0];
@@ -798,7 +796,6 @@ function validateAge(){
 	
 	if(age<=17 ||age>=67){
 		displayInvalidDateMessage(false);
-		// console.log(age);
 		document.getElementById("dob-error").style.display = "inline";
 		return false;
 	}else{
@@ -907,11 +904,15 @@ function getAge(Bdate){
 }
 
 function getCover(){
-	if(validatePremium()){
+	if (validatePremium()) {
+		let dobDay = document.forms["regForm"]["dob-day"];
+		let dobMonth = document.forms["regForm"]["dob-month"];
+		let dobYear = document.forms["regForm"]["dob-year"];
+		let userAge = getAge(`${dobYear.value}/${dobMonth.value}/${dobDay.value}`);
 		const premiumData = {
 			ccProduct: "OLP",
 			Cover: "OLP WL",
-			RateKey1: getAge(document.forms["regForm"]["dob"].value),
+			RateKey1: userAge,
 			RateKey2: document.forms["regForm"]["income"].value,
 			RateKey3: document.forms["regForm"]["gender"].value,
 			RateKey4: " ",
@@ -949,11 +950,15 @@ function getCover(){
 	}
 }
 function getPremium(){
-	if(validateCover()){
+	if (validateCover()){
+		let dobDay = document.forms["regForm"]["dob-day"];
+		let dobMonth = document.forms["regForm"]["dob-month"];
+		let dobYear = document.forms["regForm"]["dob-year"];
+		let userAge = getAge(`${dobYear.value}/${dobMonth.value}/${dobDay.value}`);
 		const coverData = {
 			ccProduct: "OLP",
 			Cover: "OLP WL",
-			RateKey1: getAge(document.forms["regForm"]["dob"].value),
+			RateKey1: userAge,
 			RateKey2: document.forms["regForm"]["income"].value,
 			RateKey3: document.forms["regForm"]["gender"].value,
 			RateKey4: " ",
@@ -991,19 +996,23 @@ function getPremium(){
 
 
 // window.addEventListener( "load", function () {
-	function sendForm(){
-		const age = getAge(document.forms["regForm"]["dob"].value);
+	function sendForm() {
+		let dobDay = document.forms["regForm"]["dob-day"];
+		let dobMonth = document.forms["regForm"]["dob-month"];
+		let dobYear = document.forms["regForm"]["dob-year"];
+		let age = getAge(`${dobYear.value}/${dobMonth.value}/${dobDay.value}`);
+
 		const income = ["R0 - R5 000","R5 000 - R10 000","R10 001 - R15 000","R15 001 - R20 000","R20 001 - R25 000","R25 001 - R50 000","R50 001 - R100 000","R100 001 +"]
 		const formData = {
 			Action: "Quote Request",
 			Channel: "Ongeza Website",
 			ContactName: document.forms["regForm"]["name"].value,
 			Message: "Please contact me for an Ongeza Life Quote. My contact details are as follow:"+"\n"+"Name: "+
-				document.forms["regForm"]["name"].value+"\n"+"Email address: "+document.forms["regForm"]["email"].value+"\n\n"+
-				"Cellular number: "+document.forms["regForm"]["number"].value+"\n\n"+
-				"Gender: "+document.forms["regForm"]["gender"].value+"\n"+
-				"Date of Birth: "+document.forms["regForm"]["dob"].value+"\n"+
-				"Age next birthday: "+age+"\n"+
+				document.forms["regForm"]["name"].value+"\n"+"Email: "+document.forms["regForm"]["email"].value+"\n\n"+
+				"Cell: "+document.forms["regForm"]["number"].value+"\n\n"+
+				"Sex: "+document.forms["regForm"]["gender"].value+"\n"+
+				"DOB: "+`${dobYear}/${dobMonth}/${dobDay}`+"\n"+
+				"Age: "+age+"\n"+
 				"Income level: ("+document.forms["regForm"]["income"].value+") "+income[document.forms["regForm"]["income"].value-1]+"\n"+
 				"Premium: "+document.forms["regForm"]["premiumInput"].value+"\n"+
 				"Sum insured / Cover: "+document.forms["regForm"]["coverInput"].value,
@@ -1013,7 +1022,7 @@ function getPremium(){
 			eMail: document.forms["regForm"]["email"].value
 		}
 		// console.log(formData);
-		if(validateForm()){
+		if (validateForm()){
 			const request = new XMLHttpRequest();
 			request.onload = () => {
 				console.log(request.responseText);
