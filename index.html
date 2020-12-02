@@ -30,6 +30,7 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="css/color.css">
 	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/quote-form.css">
 	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -254,25 +255,30 @@
 											<div class="form-group">
 												<h5>Date Of Birth: </h5>
 												<input type="date" name="dob" class="form-control" onchange="validateAge()" required>
-												<div>
+												<div style="margin-bottom: 0.5em;">
 													<div style="display: inline-block; margin-top: 1em;">
 														<h5>Day</h5>
-														<input style="width: 6em; margin-right: 2em;" type="number" name="dob-day" class="form-control" onchange=""
+														<input style="width: 6em; margin-right: 2em;" type="number" name="dob-day" class="form-control" onchange="isValidDayInput(); isValidDate();"
 															min="1" max="31">
 													</div>
 													<div style="display: inline-block; margin-top: 1em;">
 														<h5>Month</h5>
-														<input style="width: 6em; margin-right: 2em;" type="number" name="dob-month" class="form-control" onchange=""
+														<input style="width: 6em; margin-right: 2em;" type="number" name="dob-month" class="form-control" onchange="isValidMonthInput(); isValidDate();"
 															min="1" max="12">
 													</div>
 													
 													<div style="display: inline-block; margin-top: 1em;">
 														<h5>Year</h5>
-													<input style="width: 10em;" type="number" name="dob-year" class="form-control" onchange="" min="1900">
+														<input style="width: 10em;" type="number" name="dob-year" class="form-control"  min="1900" onchange="isValidYearInput(); isValidDate();">
 													</div>
 													
 												</div>
-												<sub class="text-warning error-message" id="dob-invalid-date">You have entered an invalid date.</sub>
+												<ul>
+													<li class="error-message" id="dob-invalid-day"><sub class="text-warning">You have entered an invalid day. Day should be between 1 and 31.</sub></li>
+													<li class="error-message" id="dob-invalid-month"><sub class="text-warning">You have entered an invalid month. Month should be between 1 and 12.</sub></li>
+													<li class="error-message" id="dob-invalid-year"><sub class="text-warning">You have entered an invalid year.</sub></li>
+													<li class="error-message" id="dob-invalid-date"><sub class="text-warning">You have entered an invalid date.</sub></li>
+												</ul>
 												<sub class="text-warning error-message" id="dob-error">Sorry, eligibility is from 18 to 66</sub>
 											</div>
 											<div class="form-group">

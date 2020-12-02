@@ -638,28 +638,158 @@ function validateForm(n) {
       valid = false;
     }
   }
-  if(currentTab==0){
-	  if(!validateAge())
+
+  const currentTabIndex = Number(currentTab);
+  if (currentTabIndex === 0){
+	  if (!validateAge())
 	  	valid = false;
-  }else if(currentTab==1){
-	  if(!validatePremium() || !validateCover())
+  } else if (currentTabIndex === 1){
+	  if (!validatePremium() || !validateCover())
 	  	valid = false;
-  }else if(currentTab==2){
-	  if(!validateEmail() || !validateNumber())
-		valid = false;
+  } else if (currentTabIndex === 2){
+	  if (!validateEmail() || !validateNumber())
+	  	valid = false;
   }
   // If the valid status is true, mark the step as finished and valid:
-  if (valid && currentTab!=3) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
+  if (valid && currentTabIndex !== 3) {
+	  document.getElementsByClassName("step")[currentTab].className += " finish";
   }
   return valid; // return the valid status
 }
+
+function isValidDayInput() {
+	let dobDay = document.getElementsByName("dob-day")[0];
+	console.log(dobDay, dobDay.value);
+	const dayEntered = Number(dobDay.value);
+
+	if (Number.isNaN(dobDay.value) || !(dayEntered >= 1 && dayEntered <= 31)) {
+		dobDay.className += " invalid";
+		document.getElementById("dob-invalid-day").style.display = "block";
+		return false;
+	}
+
+	document.getElementById("dob-invalid-day").style.display = "none";
+	dobDay.classList.remove("invalid");		
+	return true;
+}
+
+function isValidMonthInput() {
+	let dobMonth = document.getElementsByName("dob-month")[0];
+	console.log(dobMonth, dobMonth.value);
+	const monthEntered = Number(dobMonth.value);
+	if (Number.isNaN(dobMonth.value) || !(monthEntered >= 1 && monthEntered <= 12)) {
+		dobMonth.className += " invalid";
+		document.getElementById("dob-invalid-month").style.display = "block";
+		return false;
+	}
+	
+	document.getElementById("dob-invalid-month").style.display = "none";
+	dobMonth.classList.remove("invalid");		
+	return true;
+}
+
+function isValidYearInput() {
+	let dobYear = document.getElementsByName("dob-year")[0];
+	console.log(dobYear, dobYear.value);
+
+	const yearEntered = Number(dobYear.value);
+	if (Number.isNaN(dobYear.value) || !(yearEntered >= 1900 && yearEntered <= new Date().getFullYear())) {
+		dobYear.className += " invalid";
+		document.getElementById("dob-invalid-year").style.display = "inline";
+		return false;
+	}
+	
+	document.getElementById("dob-invalid-year").style.display = "none";
+	dobYear.classList.remove("invalid");		
+	return true;
+}
+
+function displayInvalidDateMessage() {
+	let dobDay = document.getElementsByName("dob-day")[0];
+	let dobMonth = document.getElementsByName("dob-month")[0];
+	let dobYear = document.getElementsByName("dob-year")[0];
+
+	dobDay.className += " invalid";
+	dobMonth.className += " invalid";
+	dobYear.className += " invalid";
+	document.getElementById("dob-invalid-date").style.display = "block";
+}
+
+function removeInvalidDateMessage() {
+	let dobDay = document.getElementsByName("dob-day")[0];
+	let dobMonth = document.getElementsByName("dob-month")[0];
+	let dobYear = document.getElementsByName("dob-year")[0];
+
+
+	document.getElementById("dob-invalid-date").style.display = "none";
+	dobDay.classList.remove("invalid");
+	dobMonth.classList.remove("invalid");
+	dobYear.classList.remove("invalid");
+}
+
+function getMaxDayInMonth(month, year) {
+	const thirtyDays = 30;
+	const thirtyOneDays = 31;
+	switch(month) {
+		case 2: {
+			const febIndex = month - 1;
+			const testLeapYearDate = new Date(year, febIndex, 29);
+			if (testLeapYearDate.getMonth() === febIndex) {
+				return 29;
+			}
+			return 28;
+		}
+
+		case 4: // April
+			return thirtyDays;
+
+		case 6: // June
+			return thirtyDays;
+
+		case 9: // September
+			return thirtyDays;
+
+		case 11: // November
+			return thirtyDays;
+
+		default:
+			return thirtyOneDays;
+	  }
+}
+
+function isValidDate() {
+	let dobDay = document.getElementsByName("dob-day")[0];
+	let dobMonth = document.getElementsByName("dob-month")[0];
+	let dobYear = document.getElementsByName("dob-year")[0];
+
+	if (!(dobDay.value && dobMonth.value && dobYear.value)) {
+		return false;
+	}
+	if (!isValidDayInput() || !isValidMonthInput() || !isValidYearInput()) {
+		return false;
+	}
+
+	// Check valid number of days for month
+	const dayEntered = Number(dobDay.value);
+	const monthEntered = Number(dobMonth.value);
+	const yearEntered = Number(dobYear.value);
+	let maxDayInMonth = getMaxDayInMonth(monthEntered,yearEntered);
+
+	if (dayEntered > maxDayInMonth) {
+		displayInvalidDateMessage();
+		return false;
+	}
+
+	removeInvalidDateMessage();
+	return true;
+}
+
 function validateAge(){
 	var dob = document.getElementsByName("dob")[0];
 	var age = getAge(dob.value);
 	if(age<=17 ||age>=67){
 		dob.className += " invalid";
-		console.log(age);
+		// console.log(age);
 		document.getElementById("dob-error").style.display = "inline";
 		return false;
 	}else{
