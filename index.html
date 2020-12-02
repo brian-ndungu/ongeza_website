@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/transitions.css">
-	<link rel="stylesheet" href="css/prettyPhoto.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/css/prettyPhoto.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/pogoslider.css">
 	<link rel="stylesheet" href="style.css">
@@ -255,21 +255,19 @@
 											<div class="form-group">
 												<h5>Date Of Birth: </h5>
 												<input type="date" name="dob" class="form-control" onchange="validateAge()" required>
-												<div style="margin-bottom: 0.5em;">
-													<div style="display: inline-block; margin-top: 1em;">
+												<div class="dob-fields-group">
+													<div class="dob-field">
 														<h5>Day</h5>
-														<input style="width: 6em; margin-right: 2em;" type="number" name="dob-day" class="form-control" onchange="isValidDayInput(); isValidDate();"
-															min="1" max="31">
+														<input class="dob-input form-control" type="number" name="dob-day" min="1" max="31" onchange="isValidDayInput(); validateAge();" required>
 													</div>
-													<div style="display: inline-block; margin-top: 1em;">
+													<div class="dob-field">
 														<h5>Month</h5>
-														<input style="width: 6em; margin-right: 2em;" type="number" name="dob-month" class="form-control" onchange="isValidMonthInput(); isValidDate();"
-															min="1" max="12">
+														<input class="dob-input form-control" type="number" name="dob-month" min="1" max="12" onchange="isValidMonthInput(); validateAge();" required>
 													</div>
 													
-													<div style="display: inline-block; margin-top: 1em;">
+													<div class="dob-field">
 														<h5>Year</h5>
-														<input style="width: 10em;" type="number" name="dob-year" class="form-control"  min="1900" onchange="isValidYearInput(); isValidDate();">
+														<input class="dob-input form-control" type="number" name="dob-year" min="1900" onchange="isValidYearInput(); validateAge();" required>
 													</div>
 													
 												</div>

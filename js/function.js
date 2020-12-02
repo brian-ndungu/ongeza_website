@@ -704,7 +704,7 @@ function isValidYearInput() {
 	return true;
 }
 
-function displayInvalidDateMessage() {
+function displayInvalidDateMessage(showMessage = true) {
 	let dobDay = document.getElementsByName("dob-day")[0];
 	let dobMonth = document.getElementsByName("dob-month")[0];
 	let dobYear = document.getElementsByName("dob-year")[0];
@@ -712,7 +712,9 @@ function displayInvalidDateMessage() {
 	dobDay.className += " invalid";
 	dobMonth.className += " invalid";
 	dobYear.className += " invalid";
-	document.getElementById("dob-invalid-date").style.display = "block";
+	if (showMessage) {
+		document.getElementById("dob-invalid-date").style.display = "block";
+	}
 }
 
 function removeInvalidDateMessage() {
@@ -785,16 +787,23 @@ function isValidDate() {
 }
 
 function validateAge(){
-	var dob = document.getElementsByName("dob")[0];
-	var age = getAge(dob.value);
+	if (!isValidDate()) {
+		return false;
+	}
+	console.log(`Checking age eligibility ...`);
+	let dobDay = document.getElementsByName("dob-day")[0];
+	let dobMonth = document.getElementsByName("dob-month")[0];
+	let dobYear = document.getElementsByName("dob-year")[0];
+	let age = getAge(`${dobYear.value}/${dobMonth.value}/${dobDay.value}`);
+	
 	if(age<=17 ||age>=67){
-		dob.className += " invalid";
+		displayInvalidDateMessage(false);
 		// console.log(age);
 		document.getElementById("dob-error").style.display = "inline";
 		return false;
 	}else{
 		document.getElementById("dob-error").style.display = "none";
-		dob.classList.remove("invalid");
+		removeInvalidDateMessage();
 		return true;		
 	}
 }
