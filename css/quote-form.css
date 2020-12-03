@@ -5,7 +5,7 @@
 
 .dob-fields-group :nth-child(3) input {
     margin-right: 0;
-    width: 10em;
+    width: 7em;
 }
 
 div.dob-field {
@@ -14,8 +14,9 @@ div.dob-field {
 }
 
 .dob-input {
-    width: 6em; 
+    width: 5em; 
     margin-right: 2em;
+    padding-right: 15px !important;
 }
 
 .at-btn.at-btnb.button-disabled {
