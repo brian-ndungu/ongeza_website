@@ -510,7 +510,7 @@
 	.at-postsvtwo .at-post {width: 100%;}
 }
 @media (max-width:480px){
-	.at-slidercontent .at-btns .at-btn{padding: 0 25px;}
+	.at-slidercontent .at-btns .at-btn{padding: 0 22px;}
 	.at-addressarea {
 		width: 100%;
 		max-width: 420px;
