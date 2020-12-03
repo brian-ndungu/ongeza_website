@@ -599,7 +599,7 @@ function nextPrev(n) {
   // Exit the function if any field in the current tab is invalid:
   
   if (n == 1 && !validateForm(n)) return false;
-  if (n ==-1 && currentTab==1){
+  if (n ==-1 && currentTab==1) {
 	  document.getElementById("coverInput").value="";
 	  document.getElementById("premiumInput").value="";
   }
@@ -638,33 +638,172 @@ function validateForm(n) {
       valid = false;
     }
   }
-  if(currentTab==0){
-	  if(!validateAge())
+
+  const currentTabIndex = Number(currentTab);
+  if (currentTabIndex === 0){
+	  if (!validateAge())
 	  	valid = false;
-  }else if(currentTab==1){
-	  if(!validatePremium() || !validateCover())
+  } else if (currentTabIndex === 1){
+	  if (!validatePremium() || !validateCover())
 	  	valid = false;
-  }else if(currentTab==2){
-	  if(!validateEmail() || !validateNumber())
-		valid = false;
+  } else if (currentTabIndex === 2){
+	  if (!validateEmail() || !validateNumber())
+	  	valid = false;
   }
   // If the valid status is true, mark the step as finished and valid:
-  if (valid && currentTab!=3) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
+  if (valid && currentTabIndex !== 3) {
+	  document.getElementsByClassName("step")[currentTab].className += " finish";
   }
   return valid; // return the valid status
 }
+
+function isValidDayInput() {
+	let dobDay = document.getElementsByName("dob-day")[0];
+	const dayEntered = Number(dobDay.value);
+
+	if (Number.isNaN(dobDay.value) || !(dayEntered >= 1 && dayEntered <= 31)) {
+		dobDay.className += " invalid";
+		document.getElementById("dob-invalid-day").style.display = "block";
+		document.getElementById("nextBtn").className += " button-disabled";
+		return false;
+	}
+
+	document.getElementById("dob-invalid-day").style.display = "none";
+	dobDay.classList.remove("invalid");		
+	return true;
+}
+
+function isValidMonthInput() {
+	let dobMonth = document.getElementsByName("dob-month")[0];
+	const monthEntered = Number(dobMonth.value);
+	if (Number.isNaN(dobMonth.value) || !(monthEntered >= 1 && monthEntered <= 12)) {
+		dobMonth.className += " invalid";
+		document.getElementById("dob-invalid-month").style.display = "block";
+		document.getElementById("nextBtn").className += " button-disabled";
+		return false;
+	}
+	
+	document.getElementById("dob-invalid-month").style.display = "none";
+	dobMonth.classList.remove("invalid");		
+	return true;
+}
+
+function isValidYearInput() {
+	let dobYear = document.getElementsByName("dob-year")[0];
+
+	const yearEntered = Number(dobYear.value);
+	if (Number.isNaN(dobYear.value) || !(yearEntered >= 1900 && yearEntered <= new Date().getFullYear())) {
+		dobYear.className += " invalid";
+		document.getElementById("dob-invalid-year").style.display = "inline";
+		document.getElementById("nextBtn").className += " button-disabled";
+		return false;
+	}
+	
+	document.getElementById("dob-invalid-year").style.display = "none";
+	dobYear.classList.remove("invalid");		
+	return true;
+}
+
+function displayInvalidDateMessage(showMessage = true) {
+	let dobDay = document.getElementsByName("dob-day")[0];
+	let dobMonth = document.getElementsByName("dob-month")[0];
+	let dobYear = document.getElementsByName("dob-year")[0];
+
+	dobDay.className += " invalid";
+	dobMonth.className += " invalid";
+	dobYear.className += " invalid";
+	if (showMessage) {
+		document.getElementById("dob-invalid-date").style.display = "block";
+	}
+	document.getElementById("nextBtn").className += " button-disabled";
+}
+
+function removeInvalidDateMessage() {
+	let dobDay = document.getElementsByName("dob-day")[0];
+	let dobMonth = document.getElementsByName("dob-month")[0];
+	let dobYear = document.getElementsByName("dob-year")[0];
+
+
+	document.getElementById("dob-invalid-date").style.display = "none";
+	dobDay.classList.remove("invalid");
+	dobMonth.classList.remove("invalid");
+	dobYear.classList.remove("invalid");
+	document.getElementById("nextBtn").classList.remove("button-disabled");
+}
+
+function getMaxDayInMonth(month, year) {
+	const thirtyDays = 30;
+	const thirtyOneDays = 31;
+	switch(month) {
+		case 2: {
+			const febIndex = month - 1;
+			const testLeapYearDate = new Date(year, febIndex, 29);
+			if (testLeapYearDate.getMonth() === febIndex) {
+				return 29;
+			}
+			return 28;
+		}
+
+		case 4: // April
+			return thirtyDays;
+
+		case 6: // June
+			return thirtyDays;
+
+		case 9: // September
+			return thirtyDays;
+
+		case 11: // November
+			return thirtyDays;
+
+		default:
+			return thirtyOneDays;
+	  }
+}
+
+function isValidDate() {
+	let dobDay = document.getElementsByName("dob-day")[0];
+	let dobMonth = document.getElementsByName("dob-month")[0];
+	let dobYear = document.getElementsByName("dob-year")[0];
+
+	if (!(dobDay.value && dobMonth.value && dobYear.value)) {
+		return false;
+	}
+	if (!isValidDayInput() || !isValidMonthInput() || !isValidYearInput()) {
+		return false;
+	}
+
+	// Check valid number of days for month
+	const dayEntered = Number(dobDay.value);
+	const monthEntered = Number(dobMonth.value);
+	const yearEntered = Number(dobYear.value);
+	let maxDayInMonth = getMaxDayInMonth(monthEntered,yearEntered);
+
+	if (dayEntered > maxDayInMonth) {
+		displayInvalidDateMessage();
+		return false;
+	}
+
+	removeInvalidDateMessage();
+	return true;
+}
+
 function validateAge(){
-	var dob = document.getElementsByName("dob")[0];
-	var age = getAge(dob.value);
+	if (!isValidDate()) {
+		return false;
+	}
+	let dobDay = document.getElementsByName("dob-day")[0];
+	let dobMonth = document.getElementsByName("dob-month")[0];
+	let dobYear = document.getElementsByName("dob-year")[0];
+	let age = getAge(`${dobYear.value}/${dobMonth.value}/${dobDay.value}`);
+	
 	if(age<=17 ||age>=67){
-		dob.className += " invalid";
-		console.log(age);
+		displayInvalidDateMessage(false);
 		document.getElementById("dob-error").style.display = "inline";
 		return false;
 	}else{
 		document.getElementById("dob-error").style.display = "none";
-		dob.classList.remove("invalid");
+		removeInvalidDateMessage();
 		return true;		
 	}
 }
@@ -736,7 +875,7 @@ function validateNumber(){
 		return false;
 	}
 	document.getElementById("number-error").style.display = "none";
-	document.getElementsByName("email")[0].classList.remove("invalid");
+	document.getElementsByName("number")[0].classList.remove("invalid");
 	return true;
 }
 
@@ -768,11 +907,15 @@ function getAge(Bdate){
 }
 
 function getCover(){
-	if(validatePremium()){
+	if (validatePremium()) {
+		let dobDay = document.forms["regForm"]["dob-day"];
+		let dobMonth = document.forms["regForm"]["dob-month"];
+		let dobYear = document.forms["regForm"]["dob-year"];
+		let userAge = getAge(`${dobYear.value}/${dobMonth.value}/${dobDay.value}`);
 		const premiumData = {
 			ccProduct: "OLP",
 			Cover: "OLP WL",
-			RateKey1: getAge(document.forms["regForm"]["dob"].value),
+			RateKey1: userAge,
 			RateKey2: document.forms["regForm"]["income"].value,
 			RateKey3: document.forms["regForm"]["gender"].value,
 			RateKey4: " ",
@@ -810,11 +953,15 @@ function getCover(){
 	}
 }
 function getPremium(){
-	if(validateCover()){
+	if (validateCover()){
+		let dobDay = document.forms["regForm"]["dob-day"];
+		let dobMonth = document.forms["regForm"]["dob-month"];
+		let dobYear = document.forms["regForm"]["dob-year"];
+		let userAge = getAge(`${dobYear.value}/${dobMonth.value}/${dobDay.value}`);
 		const coverData = {
 			ccProduct: "OLP",
 			Cover: "OLP WL",
-			RateKey1: getAge(document.forms["regForm"]["dob"].value),
+			RateKey1: userAge,
 			RateKey2: document.forms["regForm"]["income"].value,
 			RateKey3: document.forms["regForm"]["gender"].value,
 			RateKey4: " ",
@@ -852,19 +999,23 @@ function getPremium(){
 
 
 // window.addEventListener( "load", function () {
-	function sendForm(){
-		const age = getAge(document.forms["regForm"]["dob"].value);
+	function sendForm() {
+		let dobDay = document.forms["regForm"]["dob-day"];
+		let dobMonth = document.forms["regForm"]["dob-month"];
+		let dobYear = document.forms["regForm"]["dob-year"];
+		let age = getAge(`${dobYear.value}/${dobMonth.value}/${dobDay.value}`);
+
 		const income = ["R0 - R5 000","R5 000 - R10 000","R10 001 - R15 000","R15 001 - R20 000","R20 001 - R25 000","R25 001 - R50 000","R50 001 - R100 000","R100 001 +"]
 		const formData = {
 			Action: "Quote Request",
 			Channel: "Ongeza Website",
 			ContactName: document.forms["regForm"]["name"].value,
 			Message: "Please contact me for an Ongeza Life Quote. My contact details are as follow:"+"\n"+"Name: "+
-				document.forms["regForm"]["name"].value+"\n"+"Email address: "+document.forms["regForm"]["email"].value+"\n\n"+
-				"Cellular number: "+document.forms["regForm"]["number"].value+"\n\n"+
-				"Gender: "+document.forms["regForm"]["gender"].value+"\n"+
-				"Date of Birth: "+document.forms["regForm"]["dob"].value+"\n"+
-				"Age next birthday: "+age+"\n"+
+				document.forms["regForm"]["name"].value+"\n"+"Email: "+document.forms["regForm"]["email"].value+"\n\n"+
+				"Cell: "+document.forms["regForm"]["number"].value+"\n\n"+
+				"Sex: "+document.forms["regForm"]["gender"].value+"\n"+
+				"DOB: "+`${dobYear.value}/${dobMonth.value}/${dobDay.value}`+"\n"+
+				"Age: "+age+"\n"+
 				"Income level: ("+document.forms["regForm"]["income"].value+") "+income[document.forms["regForm"]["income"].value-1]+"\n"+
 				"Premium: "+document.forms["regForm"]["premiumInput"].value+"\n"+
 				"Sum insured / Cover: "+document.forms["regForm"]["coverInput"].value,
@@ -874,7 +1025,7 @@ function getPremium(){
 			eMail: document.forms["regForm"]["email"].value
 		}
 		// console.log(formData);
-		if(validateForm()){
+		if (validateForm()){
 			const request = new XMLHttpRequest();
 			request.onload = () => {
 				console.log(request.responseText);
