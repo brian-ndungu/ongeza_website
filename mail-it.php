@@ -1,6 +1,6 @@
 <?php
 
-$send_to = "info@ongezalife.com";
+$send_to = "info@ongezalife.co.za";
 $send_subject = "Website Contact Us Form ";
 
 
@@ -8,9 +8,9 @@ $send_subject = "Website Contact Us Form ";
 /*Be careful when editing below this line */
 
 $f_name = cleanupentries($_POST["name"]);
-$f_email = cleanupentries($_POST["email"]);
+$f_email = cleanupentries($_POST["emailaddress"]);
 $f_message = cleanupentries($_POST["message"]);
-$f_number = cleanupentries($_POST["number"]);
+$f_number = cleanupentries($_POST["phonenumber"]);
 $from_ip = $_SERVER['REMOTE_ADDR'];
 $from_browser = $_SERVER['HTTP_USER_AGENT'];
 
@@ -44,9 +44,8 @@ if (!$f_email) {
 }else{
 	if (filter_var($f_email, FILTER_VALIDATE_EMAIL)) {
 		mail($send_to, $send_subject, $message, $headers);
-		echo "true";
-	}else{
-		echo "invalid email";
+header("location:index.html");
+}else{
 		exit;
 	}
 }

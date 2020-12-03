@@ -47,7 +47,15 @@ body h6 {
 	text-transform: capitalize;
 	font-family: 'Saira', Arial, Helvetica, sans-serif;
 }
+.covid-image{
+	text-align: center;
+	border-radius: 10px;
+	box-shadow:0 0 10px 1px;
+	width: 100%;
+}
+
 h1 { 
+    padding-left:20px;
 	font-size: 48px;
 	text-shadow:  0 3px 2px rgba(0,0,0,0.20);
 }
@@ -313,7 +321,7 @@ address { font-style: italic; }
 	width:100%;
 	float:left;
 }
-.at-sectionspace {padding: 100px 0;}
+.at-sectionspace {padding: 90px 0;}
 .at-locationmap {
 	width: 100%;
 	float: left;
@@ -331,7 +339,7 @@ address { font-style: italic; }
 }
 .at-btn {
 	color: #fff;
-	padding: 0 50px;
+	padding: 0 48px;
 	position:relative;
 	text-align:center;
 	display: inline-block;

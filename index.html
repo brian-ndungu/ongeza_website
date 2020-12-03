@@ -62,6 +62,35 @@
 		src="https://www.facebook.com/tr?id=273658877069818&ev=PageView&noscript=1" /></noscript>
 		
 	<!-- End Facebook Pixel Code -->
+	
+<!-- Start of Async Drift Code -->
+<script>
+"use strict";
+
+!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('gt88vzim2dg4');
+</script>
+<!-- End of Async Drift Code -->
 
 </head>
 <body class="at-home at-homeone">
@@ -212,14 +241,24 @@
 			<!--************************************
 					Quote Start
 			*************************************-->
-			<section class="at-sectionspace at-parallex at-parallexhelping" id="quote">
+			<section class="at-sectionspace at-parallex at-parallexhelping">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="at-helpingsmallbusinesses">
-								<h1>Once-off Premium Life Cover</h1>
-							</div>
-							<div class="at-requestacallback">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="covid-image">
+										  <a href="http://sacoronavirus.co.za/"target="_blank"><img src="images/covid-500x.png"  alt="covid-19link">
+										  </a>
+									    </div>
+									</div>
+									<div class="col-md-6">
+										<div class="row"><h1>Once-off Premium Life Cover</h1></div>
+									</div>	
+							    </div>
+						    </div>
+							<div class="at-requestacallback" id="quote">
 								<div class="at-textcontent">
 									<div class="at-sectiontitleborder"><h2>Request a Quote</h2></div>
 									<div class="at-description">
@@ -229,7 +268,7 @@
 									<div class="at-colcontact hidden-xs">
 										<h5>Life Cover offered is </h5>
 										<h3 class="recCoverVal"></h3>
-										<h6>for only </6>
+										<h6>for only </h6>
 										<h3 class="recPremVal"></h3>
 										<h6><strong>once-off</strong> premium.</h6>
 									</div>
@@ -282,7 +321,7 @@
 												<h5>Average Gross Monthly Income: </h5>
 												<select id="incomeOptions" name="income">
 													<option value="1">R0 - R5 000</option>
-													<option value="2">R5 000 - R10 000</option>
+													<option value="2">R5 001 - R10 000</option>
 													<option value="3">R10 001 - R15 000</option>
 													<option value="4">R15 001 - R20 000</option>
 													<option value="5">R20 001 - R25 000</option>
@@ -903,7 +942,186 @@
 			<!--************************************
 					Ideal Clients End
 			*************************************-->
-			
+			<!--************************************
+						FAQ's Begin
+			*************************************-->
+			<section class="at-sectionspace at-haslayout" id="faq's">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="at-content">
+								<div class="at-sectiontitleborder">
+									<h2>Frequently asked Questions</h2>
+								</div>
+								<div class="at-faqcategory">
+									<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 pull-left">
+										<div class="at-faqcategorytitle">
+											<h2>
+			 									<span>1</span>
+												<span>FAQ's</span>
+											</h2>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 pull-left">
+										<div class="accordion panel-group at-faqaccordion">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">Is Ongeza Life licensed by the regulators?</a></h4>
+												</div>
+												<div id="collapseTwelve" class="panel-collapse collapse">
+													<div class="panel-body">
+														<div class="at-description">
+															<p>Yes, Ongeza Life is an authorized Financial Services Provider, FSP No. 50004. The company is licensed and regulated by the Financial Sector Conduct Authority, FSCA.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen">Is Ongeza Life Plan underwritten?</a></h4>
+												</div>
+												<div id="collapseThirteen" class="panel-collapse collapse">
+													<div class="panel-body">
+														<div class="at-description">
+															<p>Yes, the product is underwritten by Guardrisk Life, FSP No. 76. Guardrisk is a member of Momentum Metropolitan Holdings</p>
+															<p>Please also note that the product does not require medical underwriting, i.e. Ongeza Life will not require you to submit medicals to buy the policy.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen">Ongeza Life is a new company, not tried and tested. How can I be sure that the company will honour my claim when the time comes?</a></h4>
+												</div>
+												<div id="collapseFourteen" class="panel-collapse collapse">
+													<div class="panel-body">
+														<div class="at-description">
+															<p>Ongeza Life is strictly regulated by the FSCA. Furthermore, your policy is underwritten by Guardrisk Life (a member of the Momentum Metropolitan Holdings) and reinsured by Munich Re, an international and reputable reinsurance company. These are international brands who have been in the market for decades and have therefore been proven to be secure over the years.  </p>
+															<p>As a preference share subscriber in Guardrisk Life, Ongeza Life deposited sufficient amount of capital at Guardrisk as per the regulatory capital requirements.</p>
+															<p>With the above structure in place, you can rest assured that your claim will be honoured even if this comes tens of years down the line.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen">How soon will my claim be paid?</a></h4>
+												</div>
+												<div id="collapseFifteen" class="panel-collapse collapse">
+													<div class="panel-body">
+														<div class="at-description">
+															<p>Once the claims documents listed in the policy document (as well as on our website) are received, Ongeza Life will settle the claim within 48 hours.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseSixteen">How often can I top-up my cover?</a></h4>
+												</div>
+												<div id="collapseSixteen" class="panel-collapse collapse">
+													<div class="panel-body">
+														<div class="at-description">
+															<p>Firstly, you can buy any amount of cover, subject to a maximum of R150 000 over every rolling 12 months. You choose the amount of cover for life you wish to buy and we calculate the applicable once-off premium for you. Alternatively, you choose the amount of premium you can afford to pay at any time, and we calculate the amount of cover for life that premium can buy you.</p>
+															<p>You can top-up your cover at any time provided you have not reached the R150 000 cover over the preceeding 12 months.</p>
+															<p>Ongeza Life Plan is the only insurance product in the market which allows you to choose how much cover you wish to buy whenever you wish to do so, without requiring you to enter into contractual obligations. It gives you entire flexibility and freedom.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseSeventeen">Am I eligible to buy the Ongeza Life Policy?</a></h4>
+												</div>
+												<div id="collapseSeventeen" class="panel-collapse collapse">
+													<div class="panel-body">
+														<div class="at-description">
+															<p>You are eligible to buy the policy if you will be aged between 18 and 66 years at your next birthday and residing in South Africa. Both SA citizens and foreign nationals with a valid passport are eligible..</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseEighteen">Will Ongeza Life pay claims resulting from Covid-19 or any other pandemic?</a></h4>
+												</div>
+												<div id="collapseEighteen" class="panel-collapse collapse">
+													<div class="panel-body">
+														<div class="at-description">
+															<p>Yes, all valid claims will be paid subject to the 6 months waiting period for deaths due to natural causes, including Covid-19 or any other pandemic. There is no waiting period for accidental deaths.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseNineteen">Will I be required to provide proof of income?</a></h4>
+												</div>
+												<div id="collapseNineteen" class="panel-collapse collapse">
+													<div class="panel-body">
+														<div class="at-description">
+															<p>If your gross monthly income is less than or equal to R5 000, you will not be required to provide proof of income. If your gross monthly income is more than R5 000, you will be required to send us proof of income at admin@ongezalife.co.za. For those employed, a salary slip will suffice. For those who are self-employed, 3 months bank statements not older than 12 months will suffice. Alternatively, you can send us a copy of your latest SARS return/assessment.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwenty">If my income increases over time, will my new income be used when I do a top-up?</a></h4>
+												</div>
+												<div id="collapseTwenty" class="panel-collapse collapse">
+													<div class="panel-body">
+														<div class="at-description">
+															<p>Yes, at the time of doing a top-up, your new income will be used.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwentyone">I earn less than R5 000 per month and I got a quote from your system showing that I would receive a lower cover amount than my friend who is of the same age but earning R20 000 per month, if we pay the same premium. Please explain this.</a></h4>
+												</div>
+												<div id="collapseTwentyone" class="panel-collapse collapse">
+													<div class="panel-body">
+														<div class="at-description">
+															<p>Our pricing is based on 3 factors:
+																<br>
+																<br>
+																1.	Gender: females experience lower mortality than males, so a female rate is more favourable than a male rate of the same age
+																<br>
+																<br>
+																2.	Age: mortality increases with age, so a younger person will get a more favourable rate than an older person earning the same income
+																<br>
+																<br>
+																3.	Gross monthly income: this factor is used as a proxy for lifestyle since lifestyle is not measurable. It has historically been proven that mortality rate reduces as the person’s income increases, which could be explained by change in lifestyle, access to good healthcare facilities and other factors. A good proof to this is the higher life expectancy experienced in developed countries relative to under-developed countries.
+																</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwentytwo">Can I buy the policy for another person, e.g. my brother or sister, or even my parents?</a></h4>
+												</div>
+												<div id="collapseTwentytwo" class="panel-collapse collapse">
+													<div class="panel-body">
+														<div class="at-description">
+															<p>Yes, you can buy the policy for anybody else. The insured person is however the owner of the policy and he or she will be the one whose profile we will use to price. Furthermore, the insured person is the one who would nominate the beneficiaries who would be paid the benefit in the event of his or her death.</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--************************************
+						FAQ's End
+			*************************************-->
 			<!--************************************
 					Contact Us Start
 			*************************************-->
@@ -976,7 +1194,7 @@
 												</div>
 											</div>
 											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left">
-												<button type="button" class="at-btn at-btnw">Submit</button>
+												<button type="submit" class="at-btn at-btnw">Submit</button>
 											</div>
 										</div>
 									</fieldset>
@@ -1013,7 +1231,7 @@
 								</div>
 								<div class="at-fcolumn">
 									<div class="at-description text-center">
-										<p>Underwritten by <a href="https://guardrisk.co.za/"><img src="images/guardrisk-logo.png" alt="image description" class="at-logo-sm"></a><br>
+										<p>Underwritten by <a href="https://guardrisk.co.za/" target="_blank"><img src="images/guardrisk-logo.png" alt="image description" class="at-logo-sm"></a><br>
 											<sub>Guardrisk is an authorised Financial Services Provider, FSP No. 76</sub>
 										</p>
 									</div>
@@ -1025,11 +1243,11 @@
 										</div>
 										<div class="at-widgetcontent">
 											<ul>
-												<li><a href="#about">About Us</a></li>
+												<li><a href="#faq's">FAQ's</a></li>
+												<li><a href="http://www.fsca.co.za/" target="_blank">FSCA</a></li>
 												<li><a href="docs/Complaints Resolution Policy - 3 June 2019 - Final.pdf">Complaints</a></li>
 												<li><a href="docs/CONFLICT OF INTEREST MANAGEMENT POLICY.pdf">Conflict of Interest</a></li>
 												<li><a href="docs/Privacy Policy.pdf">Privacy Policy</a></li>
-												<li><a href="#contact">Contact Us</a></li>
 											</ul>
 										</div>
 									</div>
