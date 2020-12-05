@@ -966,6 +966,9 @@ function getCover(){
 		document.getElementById("coverInput").value = "";
 	}
 }
+
+const debouncedGetCover = debounce(getCover());
+
 function getPremium(){
 	if (validateCover()){
 		let dobDay = document.forms["regForm"]["dob-day"];
@@ -1011,48 +1014,49 @@ function getPremium(){
 	}
 }
 
+const debouncedGetPremium = debounce(getPremium());
 
 // window.addEventListener( "load", function () {
-	function sendForm() {
-		let dobDay = document.forms["regForm"]["dob-day"];
-		let dobMonth = document.forms["regForm"]["dob-month"];
-		let dobYear = document.forms["regForm"]["dob-year"];
-		let age = getAge(`${dobYear.value}/${dobMonth.value}/${dobDay.value}`);
+function sendForm() {
+	let dobDay = document.forms["regForm"]["dob-day"];
+	let dobMonth = document.forms["regForm"]["dob-month"];
+	let dobYear = document.forms["regForm"]["dob-year"];
+	let age = getAge(`${dobYear.value}/${dobMonth.value}/${dobDay.value}`);
 
-		const income = ["R0 - R5 000","R5 000 - R10 000","R10 001 - R15 000","R15 001 - R20 000","R20 001 - R25 000","R25 001 - R50 000","R50 001 - R100 000","R100 001 +"]
-		const formData = {
-			Action: "Quote Request",
-			Channel: "Ongeza Website",
-			ContactName: document.forms["regForm"]["name"].value,
-			Message: "Please contact me for an Ongeza Life Quote. My contact details are as follow:"+"\n"+"Name: "+
-				document.forms["regForm"]["name"].value+"\n"+"Email: "+document.forms["regForm"]["email"].value+"\n\n"+
-				"Cell: "+document.forms["regForm"]["number"].value+"\n\n"+
-				"Sex: "+document.forms["regForm"]["gender"].value+"\n"+
-				"DOB: "+`${dobYear.value}/${dobMonth.value}/${dobDay.value}`+"\n"+
-				"Age: "+age+"\n"+
-				"Income level: ("+document.forms["regForm"]["income"].value+") "+income[document.forms["regForm"]["income"].value-1]+"\n"+
-				"Premium: "+document.forms["regForm"]["premiumInput"].value+"\n"+
-				"Sum insured / Cover: "+document.forms["regForm"]["coverInput"].value,
-			Product: "OLP",
-			Source: "Get A Quote",
-			Telephone: document.forms["regForm"]["number"].value,
-			eMail: document.forms["regForm"]["email"].value
-		}
-		// console.log(formData);
-		if (validateForm()){
-			const request = new XMLHttpRequest();
-			request.onload = () => {
-				console.log(request.responseText);
-			};
-			request.onerror = () => {
-				console.log(request.responseText);
-			};
-			const requestData = JSON.stringify(formData);
-			request.open('post','https://ongeza.cloudcover.insure/CloudCoverServices/ApiCreateLead');
-			request.setRequestHeader('Content-type', 'application/json');
-			request.send(requestData);
-		}
+	const income = ["R0 - R5 000","R5 000 - R10 000","R10 001 - R15 000","R15 001 - R20 000","R20 001 - R25 000","R25 001 - R50 000","R50 001 - R100 000","R100 001 +"]
+	const formData = {
+		Action: "Quote Request",
+		Channel: "Ongeza Website",
+		ContactName: document.forms["regForm"]["name"].value,
+		Message: "Please contact me for an Ongeza Life Quote. My contact details are as follow:"+"\n"+"Name: "+
+			document.forms["regForm"]["name"].value+"\n"+"Email: "+document.forms["regForm"]["email"].value+"\n\n"+
+			"Cell: "+document.forms["regForm"]["number"].value+"\n\n"+
+			"Sex: "+document.forms["regForm"]["gender"].value+"\n"+
+			"DOB: "+`${dobYear.value}/${dobMonth.value}/${dobDay.value}`+"\n"+
+			"Age: "+age+"\n"+
+			"Income level: ("+document.forms["regForm"]["income"].value+") "+income[document.forms["regForm"]["income"].value-1]+"\n"+
+			"Premium: "+document.forms["regForm"]["premiumInput"].value+"\n"+
+			"Sum insured / Cover: "+document.forms["regForm"]["coverInput"].value,
+		Product: "OLP",
+		Source: "Get A Quote",
+		Telephone: document.forms["regForm"]["number"].value,
+		eMail: document.forms["regForm"]["email"].value
 	}
+	// console.log(formData);
+	if (validateForm()){
+		const request = new XMLHttpRequest();
+		request.onload = () => {
+			console.log(request.responseText);
+		};
+		request.onerror = () => {
+			console.log(request.responseText);
+		};
+		const requestData = JSON.stringify(formData);
+		request.open('post','https://ongeza.cloudcover.insure/CloudCoverServices/ApiCreateLead');
+		request.setRequestHeader('Content-type', 'application/json');
+		request.send(requestData);
+	}
+}
 	// document.getElementById("regForm").addEventListener("submit", function(event){
 	// 	event.preventDefault();
 	// 	alert("Sent");

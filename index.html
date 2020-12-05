@@ -319,8 +319,8 @@
 											
 											<div class="col-50">
 												<div class="form-group">
-													<input type="number" id="premiumInput" name="insureValue" class="form-control insure-value" placeholder="Premium" min="500" maxlength="6" onkeyup="debounce(getCover());">
-													<input type="number" id="coverInput" name="insureValue" class="form-control insure-value" placeholder="Cover" min="500" maxlength="9" onkeyup="debounce(getPremium());">
+													<input type="number" id="premiumInput" name="insureValue" class="form-control insure-value" placeholder="Premium" min="500" maxlength="6" onkeyup="debouncedGetCover();">
+													<input type="number" id="coverInput" name="insureValue" class="form-control insure-value" placeholder="Cover" min="500" maxlength="9" onkeyup="debouncedGetPremium();">
 													<sub class="text-warning error-message" id="prem-error"></sub>
 												</div>
 											</div>
