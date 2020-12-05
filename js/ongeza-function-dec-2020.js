@@ -967,7 +967,7 @@ function getCover(){
 	}
 }
 
-const debouncedGetCover = debounce(getCover());
+const debouncedGetCover = debounce(getCover);
 
 function getPremium(){
 	if (validateCover()){
@@ -1014,7 +1014,7 @@ function getPremium(){
 	}
 }
 
-const debouncedGetPremium = debounce(getPremium());
+const debouncedGetPremium = debounce(getPremium);
 
 // window.addEventListener( "load", function () {
 function sendForm() {
