@@ -319,8 +319,8 @@
 											
 											<div class="col-50">
 												<div class="form-group">
-													<input type="number" id="premiumInput" name="insureValue" class="form-control insure-value" placeholder="Premium" min="500" maxlength="6" onkeyup="getCover()">
-													<input type="number" id="coverInput" name="insureValue" class="form-control insure-value" placeholder="Cover" min="500" maxlength="9" onkeyup="getPremium()">
+													<input type="number" id="premiumInput" name="insureValue" class="form-control insure-value" placeholder="Premium" min="500" maxlength="6" onkeyup="debouncedGetCover();">
+													<input type="number" id="coverInput" name="insureValue" class="form-control insure-value" placeholder="Cover" min="500" maxlength="9" onkeyup="debouncedGetPremium();">
 													<sub class="text-warning error-message" id="prem-error"></sub>
 												</div>
 											</div>
@@ -1276,7 +1276,7 @@
 	<script src="js/isotope.pkgd.js"></script>
 	<script src="js/pogoslider.js"></script>
 	<script src="js/appear.js"></script>
-	<script src="js/ongeza-function.js"></script>
+	<script src="js/ongeza-function-dec-2020.js"></script>
 
 	<!-- Start of Async Drift Code -->
 	<script>
