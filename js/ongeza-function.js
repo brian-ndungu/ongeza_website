@@ -906,6 +906,20 @@ function getAge(Bdate){
     return Math.ceil(((Date.now() - Bday) / (31557600000)));
 }
 
+const debounce = (func, wait = 300) => {
+	let timeout;
+  
+	return function executedFunction(...args) {
+	  const later = () => {
+		clearTimeout(timeout);
+		func(...args);
+	  };
+  
+	  clearTimeout(timeout);
+	  timeout = setTimeout(later, wait);
+	};
+  };
+
 function getCover(){
 	if (validatePremium()) {
 		let dobDay = document.forms["regForm"]["dob-day"];
