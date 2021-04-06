@@ -831,20 +831,20 @@ function validatePremium(){
 function validateCover(){
 	var cover = document.getElementById("coverInput").value;
 	if(cover<500){
-		document.getElementById("premiumInput").className += " invalid";
+		document.getElementById("coverInput").className += " invalid";
 		document.getElementById("prem-error").style.display = "inline";
 		document.getElementById("prem-error").innerText = "Please enter a valid cover.";
 		// alert("Sorry, minimum premium is R500");  
 		return false;
 	}else if(cover>150000){
-		document.getElementById("premiumInput").className += " invalid";
+		document.getElementById("coverInput").className += " invalid";
 		document.getElementById("prem-error").style.display = "inline";
 		document.getElementById("prem-error").innerText = "Sorry, maximum cover is R150,000 p.a.";
 		// alert("Sorry, maximum cover is R150,000 p.a.");  
 		return false;
 	}
 	document.getElementById("prem-error").style.display = "none";
-	document.getElementById("premiumInput").classList.remove("invalid");
+	document.getElementById("coverInput").classList.remove("invalid");
 	return true;
 }
 
@@ -1036,7 +1036,8 @@ function sendForm() {
 			"Age: "+age+"\n"+
 			"Income level: ("+document.forms["regForm"]["income"].value+") "+income[document.forms["regForm"]["income"].value-1]+"\n"+
 			"Premium: "+document.forms["regForm"]["premiumInput"].value+"\n"+
-			"Sum insured / Cover: "+document.forms["regForm"]["coverInput"].value,
+			"Sum insured / Cover: "+document.forms["regForm"]["coverInput"].value+"\n"+
+			"Ref: "+document.forms["regForm"]["reference"].value,
 		Product: "OLP",
 		Source: "Get A Quote",
 		Telephone: document.forms["regForm"]["number"].value,
