@@ -627,7 +627,7 @@ function validateForm(n) {
 	// console.log("This is "+ n);
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
+  y = x[currentTab].getElementsByTagName("input").filter((element) => !element.className.includes('not-required'));
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
